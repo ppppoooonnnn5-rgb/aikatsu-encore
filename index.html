@@ -352,27 +352,67 @@ ${added}枚まで登録しました。
 }
 async function backupData(){
   try{
+    const box=document.getElementById("backupResult");
+    if(!box) throw new Error("バックアップ画面を準備できませんでした");
+
+    box.style.display="block";
+    box.innerHTML="<b>バックアップを作成中...</b>";
+
+    const records=await new Promise((resolve,reject)=>{
+      const req=window.indexedDB.open("aikatsu-encore-db-v3",1);
+
+      req.onerror=()=>{
+        reject(req.error||new Error("IndexedDBを開けませんでした"));
+      };
+
+      req.onsuccess=()=>{
+        const database=req.result;
+
+        try{
+          const tx=database.transaction("cards","readonly");
+          const getReq=tx.objectStore("cards").getAll();
+
+          getReq.onerror=()=>{
+            database.close();
+            reject(getReq.error||new Error("カードを読み込めませんでした"));
+          };
+
+          getReq.onsuccess=()=>{
+            const result=getReq.result||[];
+            database.close();
+            resolve(result);
+          };
+        }catch(e){
+          database.close();
+          reject(e);
+        }
+      };
+    });
+
     const data={
       app:"aikatsu-encore-card-manager",
       version:3,
       storage:"IndexedDB",
       exportedAt:new Date().toISOString(),
-      cards:Array.isArray(cards)?cards:[]
+      cards:records
     };
 
     const json=JSON.stringify(data,null,2);
+
     const d=new Date();
     const pad=n=>String(n).padStart(2,"0");
     const filename=`aikatsu-encore-backup-${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}.json`;
 
-    const box=$("backupResult");
-    if(!box) throw new Error("バックアップ画面を準備できませんでした");
+    const blob=new Blob([json],{
+      type:"application/json;charset=utf-8"
+    });
 
-    box.style.display="block";
-    box.innerHTML="<b>バックアップを作成しました</b><br><br>";
+    const url=URL.createObjectURL(blob);
+
+    box.innerHTML="<b>バックアップを作成しました（"+records.length+"枚）</b><br><br>";
 
     const a=document.createElement("a");
-    a.href="data:application/json;charset=utf-8,"+encodeURIComponent(json);
+    a.href=url;
     a.download=filename;
     a.textContent="💾 このボタンを押して保存";
     a.style.display="inline-block";
@@ -384,6 +424,7 @@ async function backupData(){
     a.style.textDecoration="none";
 
     box.appendChild(a);
+
   }catch(err){
     alert("バックアップを作れませんでした。\n\nエラー："+(err&&err.message?err.message:String(err)));
   }
