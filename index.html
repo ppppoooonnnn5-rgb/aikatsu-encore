@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#e9579a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="アイカツカード">
+<title>アイカツアンコール カード管理</title>
+<style>
+:root{--bg:#fff7fb;--card:#fff;--text:#382d38;--muted:#8a7d88;--accent:#e9579a;--accent2:#7b61ff;--line:#eadfe7;--chip:#f6e9f1}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#fff7fb,#f7f4ff);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",sans-serif;color:var(--text)}
+header{position:sticky;top:0;z-index:5;background:#ffffffdd;backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:16px}
+.wrap{max-width:1200px;margin:auto}.top{display:flex;gap:14px;align-items:center;justify-content:space-between}.logo{font-weight:900;font-size:20px}.logo span{color:var(--accent)}
+button,.filebtn{border:0;border-radius:12px;padding:11px 15px;font-weight:700;cursor:pointer;background:#f1e9ef;color:var(--text)}
+.primary{background:linear-gradient(135deg,var(--accent),#ff7ab5);color:#fff}.search{margin-top:14px;display:flex;gap:10px}.search input{flex:1;padding:13px 15px;border:1px solid var(--line);border-radius:14px;font-size:15px;background:#fff}
+main{padding:20px 16px 50px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.filters select{padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 14px}.stat b{font-size:18px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 4px 16px #5b315b0b}.thumb{aspect-ratio:3/4;background:#f5edf2;display:flex;align-items:center;justify-content:center;overflow:hidden}.thumb img{width:100%;height:100%;object-fit:cover}.placeholder{font-size:42px;opacity:.35}.info{padding:12px}.name{font-weight:800;margin-bottom:7px}.chips{display:flex;gap:5px;flex-wrap:wrap}.chip{background:var(--chip);border-radius:999px;padding:4px 7px;font-size:11px}.status-chip{background:#eee7ff;font-weight:800}
+.meta-icon{display:inline-flex;align-items:center;gap:4px;padding:5px 8px;border-radius:999px;background:#faf6f9;font-size:11px;font-weight:800;border:1px solid var(--line)}
+.meta-icon .ico{font-size:14px}
+.card-meta{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}.coord-complete{background:#e8f7ee!important}.coord-incomplete{background:#fff1e6!important}.qty{display:inline-flex;align-items:center;gap:6px;margin-top:9px;background:#faf5f9;border:1px solid var(--line);border-radius:10px;padding:5px 7px}.qty button{padding:3px 8px;border-radius:7px;background:#eee5ec}.qty b{min-width:20px;text-align:center}.empty{padding:60px 20px;text-align:center;color:var(--muted)}
+dialog{border:0;border-radius:20px;width:min(560px,92vw);padding:0;box-shadow:0 20px 80px #0003}dialog::backdrop{background:#24152566}.modal{padding:22px}.modal h2{margin-top:0}.form{display:grid;gap:10px}.form label{font-size:12px;font-weight:800}.form input,.form select{padding:11px;border:1px solid var(--line);border-radius:11px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.actions{display:flex;gap:8px;justify-content:flex-end;margin-top:14px;position:relative;z-index:20}.actions button{position:relative;z-index:21;touch-action:manipulation;-webkit-tap-highlight-color:transparent}.drop{border:2px dashed #dfc8d7;border-radius:14px;padding:16px;text-align:center;background:#fff9fc}.progressbar{height:8px;background:#eadfe7;border-radius:999px;overflow:hidden;margin-top:7px}.progressbar>div{height:100%;background:linear-gradient(90deg,var(--accent),#7b61ff);width:0;transition:width .15s}
+@media(max-width:600px){.grid{grid-template-columns:repeat(2,1fr);gap:10px}.top{align-items:flex-start}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="top"><div class="logo">Aikatsu <span>Encore</span> Card Manager <small style="font-size:10px;opacity:.55">v17</small></div><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end"><button onclick="backupData()">⬇️ バックアップ</button><button onclick="openRestore()">⬆️ 復元</button><button class="primary" onclick="openAdd()">＋ カード追加</button><button onclick="openOfficialImport()">🌟 公式1弾を一括登録</button><button class="primary" onclick="applyOfficialMetadata()">✨ 公式データを反映</button></div></div>
+<div class="search"><input id="q" placeholder="カード名・ブランド・弾数などで検索…" oninput="render()"><button onclick="resetFilters()">リセット</button></div>
+<div style="margin-top:8px;font-size:11px;color:var(--muted)">保存版 v5</div><div id="storageStatus" style="margin-top:8px;font-size:12px;color:var(--muted)">💾 保存方式を準備中…</div>
+<div style="display:flex;gap:8px;margin-top:12px"><button id="cardsTab" class="primary" onclick="showView('cards')">カード一覧</button><button id="coordsTab" onclick="showView('coords')">コーデ一覧</button></div>
+</div></header>
+<main class="wrap">
+<div class="stats"><div class="stat">登録 <b id="count">0</b> 枚</div><div class="stat">表示 <b id="shown">0</b> 枚</div></div>
+<div class="filters">
+<select id="set" onchange="render()"><option value="">弾数：すべて</option></select>
+<select id="promo" onchange="render()"><option value="">区分：すべて</option><option>通常</option><option>プロモ</option></select>
+<select id="type" onchange="render()"><option value="">タイプ：すべて</option><option>キュート</option><option>クール</option><option>セクシー</option><option>ポップ</option><option>なし</option></select>
+<select id="brand" onchange="render()"><option value="">ブランド：すべて</option></select>
+<select id="rarity" onchange="render()"><option value="">レア度：すべて</option><option>ノーマル</option><option>レア</option><option>プレミアム</option><option>その他</option></select>
+<select id="status" onchange="render()"><option value="">所持状況：すべて</option><option>持ってる</option><option>欲しい</option><option>ダブり</option></select>
+</div>
+<div id="grid" class="grid"></div>
+</main>
+
+
+<section id="coordsView" class="wrap" style="display:none">
+  <div class="top" style="margin-bottom:15px">
+    <div><h2 style="margin:0">コーデ一覧</h2><div style="color:var(--muted);font-size:13px">カードを組み合わせてコーデとして保存できます。</div></div>
+    <button class="primary" onclick="openCoord()">＋ コーデ追加</button>
+  </div>
+  <div id="coordGrid" class="grid"></div>
+</section>
+
+<dialog id="coordDlg"><div class="modal">
+<h2>コーデを追加</h2>
+<form class="form" onsubmit="addCoord(event)">
+<label>コーデ名</label><input id="coordName" required placeholder="例：春のおでかけコーデ">
+<div class="row">
+<div><label>トップス</label><select id="coordTop"></select></div>
+<div><label>ボトムス</label><select id="coordBottom"></select></div>
+</div>
+<div class="row">
+<div><label>シューズ</label><select id="coordShoes"></select></div>
+<div><label>アクセサリー</label><select id="coordAcc"><option value="">なし</option></select></div>
+</div>
+<label>完成状態</label><select id="coordStatus"><option value="未完成">未完成</option><option value="完成">完成</option></select>
+<label>メモ</label><input id="coordMemo" placeholder="好きなポイントなど">
+<div class="actions"><button type="button" onclick="coordDlg.close()">キャンセル</button><button class="primary">保存する</button></div>
+</form></div></dialog>
+
+
+<dialog id="officialDlg"><div class="modal">
+<h2>🌟 公式1弾カードを一括登録</h2>
+<div style="padding:12px;border-radius:12px;background:#f8f3ff;margin-bottom:12px;font-size:13px">公式サイトの1弾カードリストに掲載されている <b>85枚</b> をまとめて登録できます。画像は公式サイトの画像URLをそのまま保存するため、端末の保存容量をほとんど使いません。</div>
+<label>登録時の所持状況</label><select id="officialStatus"><option>欲しい</option><option>持ってる</option><option>ダブり</option></select>
+<label style="display:flex;gap:8px;align-items:center;margin-top:10px"><input id="officialSkipExisting" type="checkbox" checked style="width:auto">同じカード番号が既にある場合は追加しない</label>
+<div id="officialProgress" style="display:none;margin-top:12px;padding:10px;border-radius:12px;background:#fff8ef;font-size:13px"></div>
+<div class="actions"><button type="button" onclick="officialDlg.close()">キャンセル</button><button type="button" class="primary" onclick="importOfficialFirstSet()">85枚を一括登録</button></div>
+<div style="margin-top:12px;font-size:11px;color:var(--muted)">カード画像・カード情報は公式サイトの掲載内容をもとにしています。画像は公式サイトから読み込みます。</div>
+</div></dialog>
+
+<input id="restoreFile" type="file" accept="application/json,.json" style="display:none" onchange="restoreData(event)">
+
+<dialog id="backupDlg"><div class="modal">
+<h2>💾 バックアップ／復元</h2>
+<div style="padding:12px;border-radius:12px;background:#f8f3ff;margin-bottom:12px;font-size:13px">
+<b>バックアップ</b><br>カード画像・カード情報・コーデ情報を1つのJSONファイルに保存します。端末変更やブラウザデータ消失に備えて、定期的に保存してください。
+</div>
+<div style="padding:12px;border-radius:12px;background:#fff8ef;font-size:13px">
+<b>復元</b><br>バックアップしたJSONを読み込むと、現在のデータを置き換えて復元します。復元前に現在のデータをバックアップすることをおすすめします。
+</div>
+<div id="backupResult" style="display:none;margin:10px 0;padding:12px;border-radius:12px;background:#eef9f2;font-size:13px"></div><div class="actions"><button onclick="backupDlg.close()">閉じる</button><button class="primary" onclick="backupData()">⬇️ バックアップ保存</button><button onclick="openRestore();backupDlg.close()">⬆️ バックアップから復元</button></div>
+</div></dialog>
+
+<dialog id="coordDetailDlg"><div class="modal">
+<h2 id="coordDetailTitle">コーデ詳細</h2>
+<div id="coordDetailBody"></div>
+<div class="actions"><button onclick="coordDetailDlg.close()">閉じる</button></div>
+</div></dialog>
+
+<dialog id="editDlg"><div class="modal">
+<h2>カード情報を編集</h2>
+<form class="form" onsubmit="updateCard(event)">
+<input id="editId" type="hidden">
+<label>カード画像（変更する場合のみ選択）</label>
+<div class="drop"><input id="editPhoto" type="file" accept="image/*"></div>
+<div id="editImagePreview" style="text-align:center;color:var(--muted);font-size:12px"></div>
+<label>カード名</label><input id="editName" required>
+<div class="row"><div><label>弾数</label><input id="editSet" placeholder="例：第1弾"></div><div><label>区分</label><select id="editPromo"><option>通常</option><option>プロモ</option></select></div></div>
+<div class="row"><div><label>タイプ</label><select id="editType"><option>キュート</option><option>クール</option><option>セクシー</option><option>ポップ</option><option>なし</option></select></div><div><label>ブランド</label><input id="editBrand" placeholder="例：Angely Sugar"></div></div>
+<label>カテゴリ</label><select id="editCategory"><option>トップス</option><option>ボトムス</option><option>シューズ</option><option>トップス＆ボトムス</option><option>フルコーデ</option><option>アクセサリー</option></select>
+<label>レア度</label><select id="editRarity"><option>ノーマル</option><option>レア</option><option>プレミアム</option><option>アンコールレア</option><option>その他</option></select>
+<label>所持状況</label><select id="editStatus" onchange="toggleEditQtyInput()"><option>持ってる</option><option>欲しい</option><option>ダブり</option></select>
+<div id="editQtyInputWrap"><label>ダブり枚数</label><input id="editQty" type="number" min="1" value="1"></div>
+<div class="actions"><button type="button" onclick="editDlg.close()">キャンセル</button><button class="primary">保存する</button></div>
+</form></div></dialog>
+
+<dialog id="dlg"><div class="modal">
+<h2>カードを追加</h2>
+<form id="addCardForm" class="form">
+<label>カード画像（写真・ファイル）</label>
+<div class="drop"><input id="photo" type="file" accept="image/*"></div>
+<label>カード名</label><input id="name" required placeholder="例：○○コーデ">
+<div class="row"><div><label>弾数</label><input id="setInput" placeholder="例：第1弾"></div><div><label>区分</label><select id="promoInput"><option>通常</option><option>プロモ</option></select></div></div>
+<div class="row"><div><label>タイプ</label><select id="typeInput"><option>キュート</option><option>クール</option><option>セクシー</option><option>ポップ</option><option>なし</option></select></div><div><label>ブランド</label><input id="brandInput" placeholder="例：Angely Sugar"></div></div>
+<label>カテゴリ</label><select id="categoryInput"><option>トップス</option><option>ボトムス</option><option>シューズ</option><option>トップス＆ボトムス</option><option>フルコーデ</option><option>アクセサリー</option></select>
+<label>レア度</label><select id="rarityInput"><option>ノーマル</option><option>レア</option><option>プレミアム</option><option>アンコールレア</option><option>その他</option></select>
+<label>所持状況</label><select id="statusInput" onchange="toggleQtyInput()"><option>持ってる</option><option>欲しい</option><option>ダブり</option></select>
+<div id="qtyInputWrap"><label>ダブり枚数</label><input id="qtyInput" type="number" min="1" value="1"></div>
+<div class="actions"><button type="button" onclick="dlg.close()">キャンセル</button><button type="button" class="primary" id="addCardBtn">登録する</button></div>
+<div id="addCardStatus" style="display:block;margin-top:10px;padding:10px;border-radius:10px;background:#fff8ef;font-size:12px"></div>
+</form>
+<hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
+<h3 style="margin:0 0 6px">📚 画像を一括取り込み</h3>
+<div style="color:var(--muted);font-size:12px;margin-bottom:10px">複数の画像を選ぶと、ファイル名をカード名にして一気に登録できます。下段からフォルダごと選ぶこともできます。画像は自動で縮小・圧縮して保存します。</div>
+<div class="drop"><input id="bulkPhotos" type="file" accept="image/*" multiple></div>
+<div class="drop" style="margin-top:8px"><input id="bulkFolder" type="file" accept="image/*" webkitdirectory directory><div style="font-size:11px;color:var(--muted);margin-top:5px">フォルダを選択（PC向け）</div></div>
+<div class="row" style="margin-top:10px"><div><label>一括登録時の弾数</label><input id="bulkSet" placeholder="例：第1弾"></div><div><label>区分</label><select id="bulkPromo"><option>通常</option><option>プロモ</option></select></div></div>
+<div class="row"><div><label>タイプ</label><select id="bulkType"><option>キュート</option><option>クール</option><option>セクシー</option><option>ポップ</option><option>なし</option></select></div><div><label>ブランド</label><input id="bulkBrand" placeholder="例：Angely Sugar"></div></div>
+<div class="row"><div><label>レア度</label><select id="bulkRarity"><option>ノーマル</option><option>レア</option><option>プレミアム</option><option>その他</option></select></div><div><label>所持状況</label><select id="bulkStatus"><option>持ってる</option><option>欲しい</option><option>ダブり</option></select></div></div>
+<div id="bulkProgress" style="display:none;margin-top:12px;padding:10px;border-radius:12px;background:#faf5f9;font-size:13px"></div>
+<div class="actions"><button type="button" class="primary" onclick="bulkImport()">選択した画像を一括登録</button></div>
+</div></dialog>
+
+<script>
+const KEY="aikatsu-encore-cards-v1";
+const DB_NAME="aikatsu-encore-db-v3";
+const DB_VERSION=1;
+const STORE="cards";
+let cards=[];
+let db=null;
+let storageReady=false;
+const $=id=>document.getElementById(id);
+function openDB(){return new Promise((resolve,reject)=>{
+  const req=indexedDB.open(DB_NAME,DB_VERSION);
+  req.onupgradeneeded=()=>{const d=req.result;if(!d.objectStoreNames.contains(STORE)) d.createObjectStore(STORE,{keyPath:"id"});};
+  req.onsuccess=()=>{db=req.result;resolve(db)};
+  req.onerror=()=>reject(req.error||new Error("IndexedDBを開けませんでした"));
+});}
+function idbAll(){return new Promise((resolve,reject)=>{const r=db.transaction(STORE,"readonly").objectStore(STORE).getAll();r.onsuccess=()=>resolve(r.result||[]);r.onerror=()=>reject(r.error)});}
+function idbPut(card){return new Promise((resolve,reject)=>{const r=db.transaction(STORE,"readwrite").objectStore(STORE).put(card);r.onsuccess=()=>resolve();r.onerror=()=>reject(r.error)});}
+function idbPutAll(items){return new Promise((resolve,reject)=>{const tx=db.transaction(STORE,"readwrite"),st=tx.objectStore(STORE);items.forEach(c=>st.put(c));tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error||new Error("保存に失敗しました"));});}
+function idbClear(){return new Promise((resolve,reject)=>{const r=db.transaction(STORE,"readwrite").objectStore(STORE).clear();r.onsuccess=()=>resolve();r.onerror=()=>reject(r.error)});}
+async function save(){if(!storageReady)return; await idbPutAll(cards);}
+async function saveOne(card){if(!storageReady)return; await idbPut(card);}
+async function initStorage(){
+  try{
+    await openDB();
+    let stored=await idbAll();
+    const oldRaw=localStorage.getItem(KEY);
+    if(!stored.length && oldRaw){
+      try{
+        const old=JSON.parse(oldRaw);
+        if(Array.isArray(old)&&old.length){
+          old.forEach(c=>{if(!c.status)c.status="持ってる";if(!c.quantity)c.quantity=1});
+          await idbPutAll(old); stored=old;
+        }
+      }catch(e){}
+    }
+    cards=stored.map(c=>({...c,status:c.status||"持ってる",quantity:Math.max(1,Number(c.quantity)||1)}));
+    storageReady=true;
+    render();
+    if($('storageStatus')) $('storageStatus').textContent=`💾 ${cards.length}枚を端末に保存中（大容量向け）`;
+  }catch(err){
+    const old=localStorage.getItem(KEY);
+    cards=old?JSON.parse(old):[];
+    storageReady=false;
+    render();
+    alert("大容量保存機能を開始できなかったため、従来の保存方式で動作します。\nブラウザのプライベートモードではなく通常モードで開いてください。");
+  }
+}
+const OFFICIAL_FIRST_SET_CODES=['E1-01_PR','E1-02_PR','E1-03_PR','E1-04_PR','E1-05_R','E1-06_R','E1-07_R','E1-08_R','E1-09_R','E1-10_R','E1-11_R','E1-12_R','E1-13_R','E1-14_R','E1-15_R','E1-16_R','E1-17_R','E1-18_R','E1-19_R','E1-20_R','E1-21_N','E1-22_N','E1-23_N','E1-24_N','E1-25_N','E1-26_N','E1-27_N','E1-28_N','E1-29_N','E1-30_ER','E1-31_ER','E1-32_ER','E1-33_PR','E1-34_PR','E1-35_PR','E1-36_PR','E1-37_R','E1-38_R','E1-39_R','E1-40_R','E1-41_N','E1-42_N','E1-43_N','E1-44_N','E1-45_N','E1-46_N','E1-47_N','E1-48_N','E1-49_N','E1-50_ER','E1-51_PR','E1-52_PR','E1-53_R','E1-54_R','E1-55_R','E1-56_R','E1-57_R','E1-58_R','E1-59_R','E1-60_N','E1-61_N','E1-62_N','E1-63_N','E1-64_N','E1-65_N','E1-66_N','E1-67_N','E1-68_N','E1-69_N','E1-70_N','E1-71_PR','E1-72_PR','E1-73_PR','E1-74_PR','E1-75_PR','E1-76_PR','E1-77_PR','E1-78_PR','E1-79_PR','E1-80_PR','E1-81_PR','E1-82_PR','E1-83_N','E1-84_N','E1-85_N'];
+const OFFICIAL_CARD_META={
+"E1-01_PR":["オーロラキスキャミソール","エンジェリーシュガー","キュート","トップス","プレミアムレア"],"E1-02_PR":["オーロラキスドレープスカート","エンジェリーシュガー","キュート","ボトムス","プレミアムレア"],"E1-03_PR":["オーロラキスバレエシューズ","エンジェリーシュガー","キュート","シューズ","プレミアムレア"],"E1-04_PR":["オーロラキスリボン","エンジェリーシュガー","キュート","アクセサリー","プレミアムレア"],
+"E1-05_R":["アイスブルーフリルキャミソール","エンジェリーシュガー","キュート","トップス","レア"],"E1-06_R":["アイスブルーフリルパニエ","エンジェリーシュガー","キュート","ボトムス","レア"],"E1-07_R":["アイスブルーシューズ","エンジェリーシュガー","キュート","シューズ","レア"],"E1-08_R":["ジュエルつきパープルリボン","エンジェリーシュガー","キュート","アクセサリー","レア"],"E1-09_R":["小花柄イエローワンピ","エンジェリーシュガー","キュート","トップス＆ボトムス","レア"],
+"E1-10_R":["ドリーミースタートップス","ドリーミークラウン","キュート","トップス","レア"],"E1-11_R":["ドリーミースタースカート","ドリーミークラウン","キュート","ボトムス","レア"],"E1-12_R":["ドリーミースターパンプス","ドリーミークラウン","キュート","シューズ","レア"],"E1-13_R":["チャーミーリボントップス","メープルリボン","キュート","トップス","レア"],"E1-14_R":["チャーミーリボンスカート","メープルリボン","キュート","ボトムス","レア"],"E1-15_R":["チャーミーリボンサンダル","メープルリボン","キュート","シューズ","レア"],"E1-16_R":["チャーミーリボンアクセ","メープルリボン","キュート","アクセサリー","レア"],"E1-17_R":["クリアネスイエロートップス","エンジェリーシュガー","キュート","トップス","レア"],"E1-18_R":["クリアネスイエロースカート","エンジェリーシュガー","キュート","ボトムス","レア"],"E1-19_R":["クリアネスイエローパンプス","エンジェリーシュガー","キュート","シューズ","レア"],"E1-20_R":["クリアネスイエローアクセ","エンジェリーシュガー","キュート","アクセサリー","レア"],
+"E1-21_N":["ピンクステージベスト","ノーブランド","キュート","トップス","ノーマル"],"E1-22_N":["ピンクステージスカート","ノーブランド","キュート","ボトムス","ノーマル"],"E1-23_N":["ピンクステージシューズ","ノーブランド","キュート","シューズ","ノーマル"],"E1-24_N":["パフスリーブレモンカラーボレロ","ノーブランド","キュート","トップス","ノーマル"],"E1-25_N":["ラベンダーフリルスカート","ノーブランド","キュート","ボトムス","ノーマル"],"E1-26_N":["イエロー編み上げブーツ","ノーブランド","キュート","シューズ","ノーマル"],"E1-27_N":["ピンクブロッサムトップス","ノーブランド","キュート","トップス","ノーマル"],"E1-28_N":["ピンクブロッサムスカート","ノーブランド","キュート","ボトムス","ノーマル"],"E1-29_N":["ピンクブロッサムブーツ","ノーブランド","キュート","シューズ","ノーマル"],
+"E1-30_ER":["オデットスワン","ドリーミークラウン","キュート","フルコーデ","アンコールレア"],"E1-31_ER":["リルリボンストーリー","メープルリボン","キュート","フルコーデ","アンコールレア"],"E1-32_ER":["オーロラペガサス","ノーブランド","キュート","フルコーデ","アンコールレア"],
+"E1-33_PR":["天の川コズミックワンショルダー","フューチャリングガール","クール","トップス","プレミアムレア"],"E1-34_PR":["天の川コズミックスカート","フューチャリングガール","クール","ボトムス","プレミアムレア"],"E1-35_PR":["天の川コズミックブーツ","フューチャリングガール","クール","シューズ","プレミアムレア"],"E1-36_PR":["天の川コズミックカチューシャ","フューチャリングガール","クール","アクセサリー","プレミアムレア"],"E1-37_R":["プリズムサイバーグラフィックワンピ","フューチャリングガール","クール","トップス＆ボトムス","レア"],"E1-38_R":["ブラックモダンボレロ","フューチャリングガール","クール","トップス","レア"],"E1-39_R":["ブラックフューチャーエナメルショートパンツ","フューチャリングガール","クール","ボトムス","レア"],"E1-40_R":["ブラックフューチャーブーツ","フューチャリングガール","クール","シューズ","レア"],
+"E1-41_N":["ブルーステージブラウス","ノーブランド","クール","トップス","ノーマル"],"E1-42_N":["ブルーステージスカート","ノーブランド","クール","ボトムス","ノーマル"],"E1-43_N":["ブルーステージブーツ","ノーブランド","クール","シューズ","ノーマル"],"E1-44_N":["ブラックストライプジャケット","ノーブランド","クール","トップス","ノーマル"],"E1-45_N":["ダイヤモンドチェックスカート","ノーブランド","クール","ボトムス","ノーマル"],"E1-46_N":["ブルーストラップシューズ","ノーブランド","クール","シューズ","ノーマル"],"E1-47_N":["ネイビーブロッサムトップス","ノーブランド","クール","トップス","ノーマル"],"E1-48_N":["ネイビーブロッサムスカート","ノーブランド","クール","ボトムス","ノーマル"],"E1-49_N":["ネイビーブロッサムブーツ","ノーブランド","クール","シューズ","ノーマル"],"E1-50_ER":["ドリームエミネンス","ノーブランド","クール","フルコーデ","アンコールレア"],
+"E1-51_PR":["レジェンダリールージュドレス","ノーブランド","セクシー","トップス＆ボトムス","プレミアムレア"],"E1-52_PR":["レジェンダリールージュパンプス","ノーブランド","セクシー","シューズ","プレミアムレア"],"E1-53_R":["アゲハレッドコクーンワンピ","スパイシーアゲハ","セクシー","トップス＆ボトムス","レア"],"E1-54_R":["アゲハレッドミュール","スパイシーアゲハ","セクシー","シューズ","レア"],"E1-55_R":["パープルジュエリーワンピ","スパイシーアゲハ","セクシー","トップス＆ボトムス","レア"],"E1-56_R":["ゴールドチェーングラディエーター","スパイシーアゲハ","セクシー","シューズ","レア"],"E1-57_R":["アゲハロゴフリルトップス","スパイシーアゲハ","セクシー","トップス","レア"],"E1-58_R":["アゲハファーつきスカート","スパイシーアゲハ","セクシー","ボトムス","レア"],"E1-59_R":["ブラックシフォンカチューシャ","スパイシーアゲハ","セクシー","アクセサリー","レア"],
+"E1-60_N":["パープルステージトップス","ノーブランド","セクシー","トップス","ノーマル"],"E1-61_N":["パープルステージスカート","ノーブランド","セクシー","ボトムス","ノーマル"],"E1-62_N":["パープルステージニーハイパンプス","ノーブランド","セクシー","シューズ","ノーマル"],"E1-63_N":["プッチがらシャイニングトップス","ノーブランド","セクシー","トップス","ノーマル"],"E1-64_N":["ブラックウォッシュデニムミニ","ノーブランド","セクシー","ボトムス","ノーマル"],"E1-65_N":["セクシーロゴチューブトップ","ノーブランド","セクシー","トップス","ノーマル"],"E1-66_N":["ベルトつきレザースカート","ノーブランド","セクシー","ボトムス","ノーマル"],"E1-67_N":["サイハイレザーブーツ","ノーブランド","セクシー","シューズ","ノーマル"],"E1-68_N":["パープルブロッサムトップス","ノーブランド","セクシー","トップス","ノーマル"],"E1-69_N":["パープルブロッサムスカート","ノーブランド","セクシー","ボトムス","ノーマル"],"E1-70_N":["パープルブロッサムブーツ","ノーブランド","セクシー","シューズ","ノーマル"],
+"E1-71_PR":["サンシャインスターウェイトップス","ノーブランド","ポップ","トップス","プレミアムレア"],"E1-72_PR":["サンシャインスターウェイスカート","ノーブランド","ポップ","ボトムス","プレミアムレア"],"E1-73_PR":["サンシャインスターウェイシューズ","ノーブランド","ポップ","シューズ","プレミアムレア"],"E1-74_PR":["サンシャインスターウェイカチューシャ","ノーブランド","ポップ","アクセサリー","プレミアムレア"],"E1-75_PR":["サンライズスターウェイトップス","ノーブランド","ポップ","トップス","プレミアムレア"],"E1-76_PR":["サンライズスターウェイスカート","ノーブランド","ポップ","ボトムス","プレミアムレア"],"E1-77_PR":["サンライズスターウェイシューズ","ノーブランド","ポップ","シューズ","プレミアムレア"],"E1-78_PR":["サンライズスターウェイカチューシャ","ノーブランド","ポップ","アクセサリー","プレミアムレア"],"E1-79_PR":["サンセットスターウェイトップス","ノーブランド","ポップ","トップス","プレミアムレア"],"E1-80_PR":["サンセットスターウェイスカート","ノーブランド","ポップ","ボトムス","プレミアムレア"],"E1-81_PR":["サンセットスターウェイシューズ","ノーブランド","ポップ","シューズ","プレミアムレア"],"E1-82_PR":["サンセットスターウェイカチューシャ","ノーブランド","ポップ","アクセサリー","プレミアムレア"],"E1-83_N":["イエローブロッサムトップス","ノーブランド","ポップ","トップス","ノーマル"],"E1-84_N":["イエローブロッサムスカート","ノーブランド","ポップ","ボトムス","ノーマル"],"E1-85_N":["イエローブロッサムブーツ","ノーブランド","ポップ","シューズ","ノーマル"]
+};
+const OFFICIAL_CARD_IMAGE_BASE="https://dcd.aikatsu.com/encore/images/cardlist/card/";
+async function applyOfficialMetadata(){
+  if(!confirm("公式1弾85枚のカード名・ブランド・タイプ・カテゴリ・レアリティを反映します。\n\n所持状況と枚数はそのまま残します。\n\n実行しますか？")) return;
+  if(!storageReady){try{await openDB();cards=await idbAll();storageReady=true;}catch(e){alert("保存機能の準備に失敗しました。");return;}}
+  let updated=0;
+  for(const c of cards){
+    const m=OFFICIAL_CARD_META[c.code]; if(!m) continue;
+    [c.name,c.brand,c.type,c.category,c.rarity]=m;
+    if(!c.set||c.set==="未分類") c.set="第1弾";
+    if(!c.promo) c.promo="通常";
+    if(!c.image) c.image=OFFICIAL_CARD_IMAGE_BASE+c.code+".webp";
+    await idbPut(c); updated++;
+  }
+  render();
+  alert(`公式データを反映しました！\n${updated}枚を更新しました。\n\n所持状況・枚数は変更していません。`);
+}
+
+function openOfficialImport(){ $("officialProgress").style.display="none"; $("officialProgress").textContent=""; $("officialDlg").showModal(); }
+async 
+
+async function importOfficialFirstSet(){
+  if(!storageReady){ try{await openDB(); let stored=await idbAll(); cards=stored.map(c=>({...c,status:c.status||"持ってる",quantity:Math.max(1,Number(c.quantity)||1)})); storageReady=true; }catch(e){alert("保存機能の準備に失敗しました。しばらく待ってから再試行してください。");return;} }
+  const status=$("officialStatus").value; const skip=$("officialSkipExisting").checked; const progress=$("officialProgress"); progress.style.display="block";
+  let added=0, skipped=0;
+  for(let i=0;i<OFFICIAL_FIRST_SET_CODES.length;i++){
+    const code=OFFICIAL_FIRST_SET_CODES[i];
+    if(skip && cards.some(c=>c.code===code)){skipped++; continue;}
+    const rarityCode=code.split("_")[1];
+    const rarity=rarityCode==="PR"?"プレミアムレア":rarityCode==="R"?"レア":rarityCode==="ER"?"アンコールレア":"ノーマル";
+    const m=OFFICIAL_CARD_META[code]||[code,"未設定","なし","トップス",rarity]; const card={id:Date.now()+Math.random(),code,name:m[0],set:"第1弾",promo:"通常",type:m[2],brand:m[1],category:m[3],rarity:m[4],status,quantity:1,image:OFFICIAL_CARD_IMAGE_BASE+code+".webp",source:"公式カードリスト"};
+    await idbPut(card); cards.unshift(card); added++;
+    progress.textContent=`公式カードを登録中… ${i+1} / ${OFFICIAL_FIRST_SET_CODES.length}`;
+    await new Promise(r=>setTimeout(r,0));
+  }
+  render(); progress.textContent=`完了！ ${added}枚を追加しました。${skipped?`（既存 ${skipped}枚はスキップ）`:""}`;
+  setTimeout(()=>officialDlg.close(),900);
+}
+
+function openAdd(){ $("dlg").showModal(); const st=$("addCardStatus"); if(st){st.style.display="block"; st.textContent=storageReady?"入力内容を確認して「登録する」を押してください。":"保存機能を準備中です…";} }
+function toggleQtyInput(){ $("qtyInputWrap").style.display=$("statusInput").value==="ダブり"?"block":"none" }
+function toggleEditQtyInput(){ $("editQtyInputWrap").style.display=$("editStatus").value==="ダブり"?"block":"none" }
+function openEdit(id){
+ const c=cards.find(x=>x.id===id); if(!c)return;
+ $("editId").value=id; $("editName").value=c.name||""; $("editSet").value=c.set||""; $("editPromo").value=c.promo||"通常";
+ $("editType").value=c.type||"なし"; $("editBrand").value=c.brand||""; $("editCategory").value=c.category||"トップス"; $("editRarity").value=c.rarity||"その他"; $("editStatus").value=c.status||"持ってる"; $("editQty").value=Math.max(1,Number(c.quantity)||1);
+ $("editPhoto").value=""; $("editImagePreview").innerHTML=c.image?"現在の画像を使用中（変更しない場合はそのまま保存）":"画像なし";
+ toggleEditQtyInput(); $("editDlg").showModal();
+}
+function updateCard(e){
+ e.preventDefault();
+ const id=Number($("editId").value), c=cards.find(x=>x.id===id); if(!c)return;
+ const apply=(image)=>{
+   c.name=$("editName").value.trim()||"名称未設定"; c.set=$("editSet").value.trim()||"未分類"; c.promo=$("editPromo").value; c.type=$("editType").value; c.brand=$("editBrand").value.trim()||"未分類"; c.category=$("editCategory").value; c.rarity=$("editRarity").value; c.status=$("editStatus").value; c.quantity=Math.max(1,parseInt($("editQty").value||"1"));
+   if(image!==null)c.image=image;
+   saveOne(c).then(()=>{ $("editDlg").close(); render(); }).catch(()=>alert("保存に失敗しました。端末の空き容量を確認してください。"));
+ };
+ const f=$("editPhoto").files[0];
+ if(f){compressImage(f).then(img=>apply(img)).catch(()=>apply(null))}else apply(null);
+}
+function changeQty(id,delta){const c=cards.find(x=>x.id===id);if(!c)return;c.quantity=Math.max(1,(c.quantity||1)+delta);saveOne(c).then(render).catch(()=>alert("保存に失敗しました。"))}
+let addTapLock = false;
+async function addCard(event){
+  if(event){ event.preventDefault(); event.stopPropagation(); }
+  const btn=$("addCardBtn"), status=$("addCardStatus");
+  const showStatus=(msg)=>{status.style.display="block";status.textContent=msg;};
+  if(addTapLock) return;
+  addTapLock=true;
+  const unlock=()=>setTimeout(()=>{addTapLock=false;},700);
+  showStatus("登録処理を開始しています…");
+  btn.disabled=true; btn.textContent="登録中…";
+  try{
+    const name=$("name").value.trim();
+    if(!name){showStatus("カード名を入力してください。");$("name").focus();return;}
+
+    // 初期化がまだ終わっていない場合も、ここで保存機能を再試行する
+    if(!db){ await openDB(); }
+    if(!storageReady){
+      let stored=await idbAll();
+      const oldRaw=localStorage.getItem(KEY);
+      if(!stored.length && oldRaw){
+        try{
+          const old=JSON.parse(oldRaw);
+          if(Array.isArray(old)&&old.length){
+            old.forEach(c=>{if(!c.status)c.status="持ってる";if(!c.quantity)c.quantity=1;});
+            await idbPutAll(old); stored=old;
+          }
+        }catch(e){}
+      }
+      cards=stored.map(c=>({...c,status:c.status||"持ってる",quantity:Math.max(1,Number(c.quantity)||1)}));
+      storageReady=true;
+    }
+
+    const f=$("photo").files[0];
+    showStatus(f?"画像を準備しています…":"カードを保存しています…");
+    const image=f?await compressImage(f):"";
+    const card={id:Date.now()+Math.random(),name,set:$("setInput").value||"未分類",promo:$("promoInput").value,type:$("typeInput").value,brand:$("brandInput").value||"未分類",category:$("categoryInput").value,rarity:$("rarityInput").value,status:$("statusInput").value,quantity:Math.max(1,parseInt($("qtyInput").value||"1")),image};
+    await idbPut(card);
+    cards.unshift(card);
+    render();
+    showStatus("登録しました！");
+    setTimeout(()=>{ $("dlg").close(); $("dlg").querySelector("form").reset(); toggleQtyInput(); },250);
+  }catch(err){
+    console.error(err);
+    showStatus("登録できませんでした："+(err&&err.message?err.message:"保存処理でエラーが発生しました"));
+  }finally{
+    btn.disabled=false; btn.textContent="登録する";
+    unlock();
+  }
+}
+
+function compressImage(file,maxW=900,maxH=1200,quality=.78){
+ return new Promise((resolve,reject)=>{
+  const r=new FileReader();
+  r.onload=()=>{const img=new Image();img.onload=()=>{
+   const scale=Math.min(1,maxW/img.naturalWidth,maxH/img.naturalHeight);
+   const w=Math.max(1,Math.round(img.naturalWidth*scale)),h=Math.max(1,Math.round(img.naturalHeight*scale));
+   const canvas=document.createElement("canvas");canvas.width=w;canvas.height=h;
+   const ctx=canvas.getContext("2d");ctx.fillStyle="#fff";ctx.fillRect(0,0,w,h);ctx.drawImage(img,0,0,w,h);
+   resolve(canvas.toDataURL("image/jpeg",quality));
+  };img.onerror=reject;img.src=r.result};
+  r.onerror=reject;r.readAsDataURL(file);
+ });
+}
+
+function baseName(name){return name.replace(/\.[^.]+$/,'').replace(/[_-]+/g,' ').trim()||'名称未設定'}
+
+async function bulkImport(){
+ const input=$("bulkPhotos"), folder=$("bulkFolder"), files=[...input.files,...folder.files].filter(f=>f.type.startsWith("image/"));
+ if(!files.length){alert("一括登録する画像を選択してください。");return}
+ const progress=$("bulkProgress");progress.style.display="block";
+ const status=$("bulkStatus").value; let added=0,failed=0;
+ progress.innerHTML=`<b>一括登録中… 0 / ${files.length}</b><div class="progressbar"><div id="bulkBar"></div></div>`;
+ for(let i=0;i<files.length;i++){
+  try{
+   const image=await compressImage(files[i]);
+   const card={id:Date.now()+Math.random()+i,name:baseName(files[i].name),set:$("bulkSet").value||"未分類",promo:$("bulkPromo").value,type:$("bulkType").value,brand:$("bulkBrand").value||"未分類",rarity:$("bulkRarity").value,status,quantity:1,image};
+   cards.unshift(card); await saveOne(card); added++;
+  }catch(err){failed++; if(err && /Quota|quota|full|容量/i.test(String(err))){alert(`保存容量の上限に達しました。
+${added}枚まで登録しました。
+バックアップを取り、不要な画像を減らしてください。`);break;}}
+  const pct=Math.round(((i+1)/files.length)*100);$("bulkBar").style.width=pct+"%";progress.firstChild.textContent=`一括登録中… ${i+1} / ${files.length}`;await new Promise(r=>setTimeout(r,0));
+ }
+ render();progress.innerHTML=`<b>完了：${added}枚を登録しました${failed?`（${failed}枚は失敗）`:''}</b>`;input.value="";folder.value="";setTimeout(()=>{progress.style.display="none"},3500);
+}
+async function backupData(){
+  try{
+    const data={app:"aikatsu-encore-card-manager",version:3,storage:"IndexedDB",exportedAt:new Date().toISOString(),cards:Array.isArray(cards)?cards:[],coords:Array.isArray(coords)?coords:[]};
+    const json=JSON.stringify(data);
+    const d=new Date();
+    const pad=n=>String(n).padStart(2,"0");
+    const filename=`aikatsu-encore-backup-${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}.json`;
+    const box=$("backupResult");
+    if(!box) throw new Error("バックアップ画面を準備できませんでした");
+    box.style.display="block";
+    box.innerHTML="<b>バックアップを作成中…</b>";
+
+    const blob=new Blob([json],{type:"application/json;charset=utf-8"});
+    const url=URL.createObjectURL(blob);
+
+    // iPhone Safariでは自動ダウンロードが安定しないため、まず保存リンクを表示。
+    const a=document.createElement("a");
+    a.href=url;
+    a.download=filename;
+    a.textContent="💾 このボタンを押して保存";
+    a.style.cssText="display:inline-block;padding:14px 18px;border-radius:14px;background:#e84f9b;color:#fff;font-weight:700;text-decoration:none;margin-top:10px";
+    const info=document.createElement("div");
+    info.style.marginTop="8px";
+    info.textContent=`カード${cards.length}枚・コーデ${coords.length}件 / ${filename}`;
+    box.innerHTML="";
+    box.appendChild(document.createTextNode("バックアップファイルを作りました。"));
+    box.appendChild(document.createElement("br"));
+    box.appendChild(a);
+    box.appendChild(info);
+    a.addEventListener("click",()=>setTimeout(()=>URL.revokeObjectURL(url),120000),{once:true});
+
+    // Web Shareが使える場合は、ユーザーのタップで共有→「ファイルに保存」へ。
+    a.addEventListener("contextmenu", async (ev)=>{ev.preventDefault();}, {passive:false});
+  }catch(err){
+    alert("バックアップを作れませんでした。\n\nエラー："+(err && err.message ? err.message : String(err)));
+  }
+}
+
+function showBackupMessage(msg){
+  const box=$("backupResult");
+  if(box){box.style.display="block";box.textContent=msg;}
+}
+
+function openRestore(){
+  $("restoreFile").value="";
+  $("restoreFile").click();
+}
+function restoreData(e){
+  const file=e.target.files&&e.target.files[0];
+  if(!file)return;
+  const r=new FileReader();
+  r.onload=()=>{
+    try{
+      const data=JSON.parse(r.result);
+      if(!data || data.app!=="aikatsu-encore-card-manager" || !Array.isArray(data.cards) || !Array.isArray(data.coords)) throw new Error("形式が違います");
+      if(!confirm(`バックアップを復元します。\n\nカード：${data.cards.length}枚\nコーデ：${data.coords.length}件\n\n現在のデータは置き換えられます。続行しますか？`)) return;
+      cards=data.cards.map(c=>({...c,status:c.status||"持ってる",quantity:Math.max(1,Number(c.quantity)||1)}));
+      coords=data.coords;
+      idbClear().then(()=>idbPutAll(cards)).then(()=>{saveCoords();render();renderCoords();}).catch(()=>alert("復元データの保存に失敗しました。端末の空き容量を確認してください。"));
+      alert(`復元しました！\nカード：${cards.length}枚\nコーデ：${coords.length}件`);
+    }catch(err){
+      alert("バックアップファイルを読み込めませんでした。\nこのアプリで作成したJSONファイルか確認してください。");
+    }
+  };
+  r.onerror=()=>alert("ファイルを読み込めませんでした。");
+  r.readAsText(file);
+}
+function render(){
+const q=$("q").value.toLowerCase(); const vals={set:$("set").value,promo:$("promo").value,type:$("type").value,brand:$("brand").value,rarity:$("rarity").value,status:$("status").value};
+cards.forEach(c=>{if(!c.status)c.status="持ってる";if(!c.quantity)c.quantity=1});
+let list=cards.filter(c=>(!q||Object.values(c).join(" ").toLowerCase().includes(q))&&Object.entries(vals).every(([k,v])=>!v||c[k]===v));
+$("count").textContent=cards.length;$("shown").textContent=list.length;
+const sets=[...new Set(cards.map(c=>c.set))].sort(), brands=[...new Set(cards.map(c=>c.brand))].sort();
+$("set").innerHTML='<option value="">弾数：すべて</option>'+sets.map(x=>`<option ${x===vals.set?'selected':''}>${esc(x)}</option>`).join("");
+$("brand").innerHTML='<option value="">ブランド：すべて</option>'+brands.map(x=>`<option ${x===vals.brand?'selected':''}>${esc(x)}</option>`).join("");
+$("grid").innerHTML=list.length?list.map(c=>`<article class="card"><div class="thumb">${c.image?`<img src="${c.image}" alt="">`:'<div class="placeholder">♡</div>'}</div><div class="info"><div class="name">${esc(c.name)}</div><div class="chips"><span class="chip">${esc(c.set)}</span><span class="chip">${esc(c.promo)}</span><span class="chip status-chip">${esc(c.status||"持ってる")}</span></div>${cardMeta(c)}${(c.status||"持ってる")==="ダブり"?`<div class="qty"><button onclick="changeQty(${c.id},-1)">−</button><b>${c.quantity||1}枚</b><button onclick="changeQty(${c.id},1)">＋</button></div>`:""}<button style="width:100%;margin-top:10px" onclick="openEdit(${c.id})">✏️ 編集</button></div></div></article>`).join(""):'<div class="empty">まだカードがありません。<br>「＋ カード追加」から登録してみよう！</div>';
+}
+function resetFilters(){["q","set","promo","type","brand","rarity","status"].forEach(id=>$(id).value="");render()}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+toggleQtyInput();
+toggleEditQtyInput();
+
+let coords=JSON.parse(localStorage.getItem("aikatsu-encore-coords-v1")||"[]");
+function saveCoords(){localStorage.setItem("aikatsu-encore-coords-v1",JSON.stringify(coords))}
+function showView(view){
+  $("coordsView").style.display=view==="coords"?"block":"none";
+  document.querySelector("main").style.display=view==="cards"?"block":"none";
+  $("cardsTab").className=view==="cards"?"primary":"";
+  $("coordsTab").className=view==="coords"?"primary":"";
+  if(view==="coords") renderCoords();
+}
+function cardOptions(){
+  const opts=cards.map(c=>`<option value="${c.id}">${esc(c.name)} — ${esc(c.set)} / ${esc(c.brand)}</option>`).join("");
+  ["coordTop","coordBottom","coordShoes"].forEach(id=>$(id).innerHTML='<option value="">未選択</option>'+opts);
+  $("coordAcc").innerHTML='<option value="">なし</option>'+opts;
+}
+function openCoord(){cardOptions();$("coordName").value="";$("coordMemo").value="";$("coordDlg").showModal()}
+function addCoord(e){
+ e.preventDefault();
+ const get=id=>$(id).value?Number($(id).value):null;
+ coords.unshift({id:Date.now(),name:$("coordName").value,top:get("coordTop"),bottom:get("coordBottom"),shoes:get("coordShoes"),acc:get("coordAcc"),status:$("coordStatus").value,memo:$("coordMemo").value});
+ saveCoords();e.target.reset();$("coordDlg").close();renderCoords();
+}
+
+function brandIcon(brand){
+ const b=String(brand||"").toLowerCase();
+ if(b.includes("sugar")||b.includes("エンジェリー")) return "🎀";
+ if(b.includes("moon")||b.includes("ムーン")) return "🌙";
+ if(b.includes("spicy")||b.includes("スパイシー")) return "🌶️";
+ if(b.includes("futur")||b.includes("フューチャー")) return "🚀";
+ if(b.includes("aurora")||b.includes("オーロラ")) return "🌌";
+ return "🏷️";
+}
+function typeIcon(type){
+ return ({キュート:"💗",クール:"💙",セクシー:"💜",ポップ:"💛",なし:"⚪"})[type]||"✨";
+}
+function rarityIcon(rarity){
+ return ({ノーマル:"☆",レア:"★",プレミアム:"👑",その他:"✦",アンコールレア:"ER"})[rarity]||"✦";
+}
+function cardMeta(c){
+ return `<div class="card-meta">${c.code?`<span class="meta-icon">🔖 ${esc(c.code)}</span>`:""}<span class="meta-icon"><span class="ico">${brandIcon(c.brand)}</span>${esc(c.brand)}</span><span class="meta-icon"><span class="ico">${typeIcon(c.type)}</span>${esc(c.type)}</span><span class="meta-icon">📁 ${esc(c.category||"未設定")}</span><span class="meta-icon"><span class="ico">${rarityIcon(c.rarity)}</span>${esc(c.rarity)}</span></div>`;
+}
+
+function cardById(id){return cards.find(c=>c.id===id)}
+function coordCard(id){
+ const c=cardById(id);
+ return c?`<div style="font-size:12px;padding:5px 0;border-bottom:1px solid var(--line)"><b>${esc(c.name)}</b>${cardMeta(c)}</div>`:"<div style='color:var(--muted)'>未登録</div>";
+}
+function toggleCoordStatus(id){
+ const c=coords.find(x=>x.id===id); if(!c)return;
+ c.status=(c.status||"未完成")==="完成"?"未完成":"完成";
+ saveCoords(); renderCoords();
+}
+function deleteCoord(id){if(confirm("このコーデを削除しますか？")){coords=coords.filter(c=>c.id!==id);saveCoords();renderCoords()}}
+function renderCoords(){
+ const g=$("coordGrid");
+ g.innerHTML=coords.length?coords.map(c=>`<article class="card" onclick="openCoordDetail(${c.id})"><div class="info">
+ <div class="name">${esc(c.name)}</div>
+ <button class="chip ${(c.status||"未完成")==="完成"?"coord-complete":"coord-incomplete"}" onclick="event.stopPropagation();toggleCoordStatus(${c.id})">${esc(c.status||"未完成")} ↔</button>
+ <div style="margin-top:8px"><b>トップス</b>${coordCard(c.top)}<b>ボトムス</b>${coordCard(c.bottom)}<b>シューズ</b>${coordCard(c.shoes)}<b>アクセサリー</b>${c.acc?coordCard(c.acc):"<div style='color:var(--muted);font-size:12px;padding:5px 0'>なし</div>"}</div>
+ ${c.memo?`<div style="margin-top:10px;color:var(--muted);font-size:12px">${esc(c.memo)}</div>`:""}
+ <div class="actions"><button onclick="event.stopPropagation();deleteCoord(${c.id})">削除</button></div>
+ </div></article>`).join(""):'<div class="empty">まだコーデがありません。<br>「＋ コーデ追加」から作ってみよう！</div>';
+}
+
+
+function cardNeedInfo(id){
+  if(!id) return {missing:false,html:"<div style='color:var(--muted);font-size:13px'>なし</div>"};
+  const c=cardById(id);
+  if(!c) return {missing:true,html:"<div class='chip coord-incomplete'>カード情報が未登録</div>"};
+  const status=c.status||"持ってる";
+  const qty=c.quantity||1;
+  if(status==="欲しい") return {missing:true,html:`<div class="chip coord-incomplete">欲しいカード → あと1枚必要</div>`};
+  if(status==="ダブり") return {missing:false,html:`<div class="chip coord-complete">所持：${qty}枚</div>`};
+  return {missing:false,html:`<div class="chip coord-complete">所持済み</div>`};
+}
+function openCoordDetail(id){
+ const c=coords.find(x=>x.id===id); if(!c)return;
+ $("coordDetailTitle").textContent=c.name;
+ const parts=[["トップス",c.top],["ボトムス",c.bottom],["シューズ",c.shoes],["アクセサリー",c.acc]];
+ let missing=[];
+ let body=parts.map(([label,cid])=>{
+   const info=cardNeedInfo(cid);
+   if(info.missing) missing.push(label);
+   const card=cid?cardById(cid):null;
+   return `<div style="padding:10px 0;border-bottom:1px solid var(--line)"><b>${label}</b><div style="margin:4px 0">${card?esc(card.name):"未選択"}</div>${info.html}</div>`;
+ }).join("");
+ if((c.status||"未完成")==="未完成"){
+   body=`<div style="margin-bottom:12px;padding:12px;border-radius:12px;background:#fff8ef"><b>必要なカード</b><br>${missing.length?`不足：${missing.join("・")}`:"このコーデのカードはすべて登録済みです"}</div>`+body;
+ } else {
+   body=`<div style="margin-bottom:12px;padding:12px;border-radius:12px;background:#edf9f1"><b>完成コーデ</b></div>`+body;
+ }
+ $("coordDetailBody").innerHTML=body;
+ $("coordDetailDlg").showModal();
+}
+
+const addForm=$("addCardForm");
+const addBtn=$("addCardBtn");
+if(addForm){ addForm.addEventListener("submit", addCard); }
+if(addBtn){
+  addBtn.addEventListener("click", addCard, true);
+  addBtn.addEventListener("pointerup", (e)=>{ if(e.pointerType==="touch") addCard(e); }, {capture:true});
+  addBtn.addEventListener("touchend", (e)=>{ addCard(e); }, {capture:true, passive:false});
+}
+initStorage();
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+}
+</script>
+</body></html>
