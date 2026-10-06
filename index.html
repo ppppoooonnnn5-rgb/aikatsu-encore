@@ -352,7 +352,7 @@ ${added}枚まで登録しました。
 }
 async function backupData(){
   try{
-    const data={app:"aikatsu-encore-card-manager",version:3,storage:"IndexedDB",exportedAt:new Date().toISOString(),cards:Array.isArray(cards)?cards:[],coords:Array.isArray(coords)?coords:[]};
+    const data={app:"aikatsu-encore-card-manager",version:3,storage:"IndexedDB",exportedAt:new Date().toISOString(),cards:Array.isArray(cards)?cards:[],};
     const json=JSON.stringify(data);
     const d=new Date();
     const pad=n=>String(n).padStart(2,"0");
