@@ -352,39 +352,40 @@ ${added}枚まで登録しました。
 }
 async function backupData(){
   try{
-    const data={app:"aikatsu-encore-card-manager",version:3,storage:"IndexedDB",exportedAt:new Date().toISOString(),cards:Array.isArray(cards)?cards:[],};
-    const json=JSON.stringify(data);
+    const data={
+      app:"aikatsu-encore-card-manager",
+      version:3,
+      storage:"IndexedDB",
+      exportedAt:new Date().toISOString(),
+      cards:Array.isArray(cards)?cards:[]
+    };
+
+    const json=JSON.stringify(data,null,2);
     const d=new Date();
     const pad=n=>String(n).padStart(2,"0");
     const filename=`aikatsu-encore-backup-${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}.json`;
+
     const box=$("backupResult");
     if(!box) throw new Error("バックアップ画面を準備できませんでした");
+
     box.style.display="block";
-    box.innerHTML="<b>バックアップを作成中…</b>";
+    box.innerHTML="<b>バックアップを作成しました</b><br><br>";
 
-    const blob=new Blob([json],{type:"application/json;charset=utf-8"});
-    const url=URL.createObjectURL(blob);
-
-    // iPhone Safariでは自動ダウンロードが安定しないため、まず保存リンクを表示。
     const a=document.createElement("a");
-    a.href=url;
+    a.href="data:application/json;charset=utf-8,"+encodeURIComponent(json);
     a.download=filename;
     a.textContent="💾 このボタンを押して保存";
-    a.style.cssText="display:inline-block;padding:14px 18px;border-radius:14px;background:#e84f9b;color:#fff;font-weight:700;text-decoration:none;margin-top:10px";
-    const info=document.createElement("div");
-    info.style.marginTop="8px";
-    info.textContent=`カード${cards.length}枚・コーデ${coords.length}件 / ${filename}`;
-    box.innerHTML="";
-    box.appendChild(document.createTextNode("バックアップファイルを作りました。"));
-    box.appendChild(document.createElement("br"));
-    box.appendChild(a);
-    box.appendChild(info);
-    a.addEventListener("click",()=>setTimeout(()=>URL.revokeObjectURL(url),120000),{once:true});
+    a.style.display="inline-block";
+    a.style.padding="14px 18px";
+    a.style.borderRadius="14px";
+    a.style.background="#e84f9b";
+    a.style.color="#fff";
+    a.style.fontWeight="700";
+    a.style.textDecoration="none";
 
-    // Web Shareが使える場合は、ユーザーのタップで共有→「ファイルに保存」へ。
-    a.addEventListener("contextmenu", async (ev)=>{ev.preventDefault();}, {passive:false});
+    box.appendChild(a);
   }catch(err){
-    alert("バックアップを作れませんでした。\n\nエラー："+(err && err.message ? err.message : String(err)));
+    alert("バックアップを作れませんでした。\n\nエラー："+(err&&err.message?err.message:String(err)));
   }
 }
 
