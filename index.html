@@ -28,7 +28,7 @@ dialog{border:0;border-radius:20px;width:min(560px,92vw);padding:0;box-shadow:0 
 </head>
 <body>
 <header><div class="wrap">
-<div class="top"><div class="logo">Aikatsu <span>Encore</span> Card Manager <small style="font-size:10px;opacity:.55">v17</small></div><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end"><button onclick="alert('バックアップボタンは動作しています')">⬇️ バックアップ</button><button onclick="openRestore()">⬆️ 復元</button><button class="primary" onclick="openAdd()">＋ カード追加</button><button onclick="openOfficialImport()">🌟 公式1弾を一括登録</button><button class="primary" onclick="applyOfficialMetadata()">✨ 公式データを反映</button></div></div>
+<div class="top"><div class="logo">Aikatsu <span>Encore</span> Card Manager <small style="font-size:10px;opacity:.55">v17</small></div><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end"><button onclick="backupData()">⬇️ バックアップ</button><button onclick="openRestore()">⬆️ 復元</button><button class="primary" onclick="openAdd()">＋ カード追加</button><button onclick="openOfficialImport()">🌟 公式1弾を一括登録</button><button class="primary" onclick="applyOfficialMetadata()">✨ 公式データを反映</button></div></div>
 <div class="search"><input id="q" placeholder="カード名・ブランド・弾数などで検索…" oninput="render()"><button onclick="resetFilters()">リセット</button></div>
 <div style="margin-top:8px;font-size:11px;color:var(--muted)">保存版 v5</div><div id="storageStatus" style="margin-top:8px;font-size:12px;color:var(--muted)">💾 保存方式を準備中…</div>
 <div style="display:flex;gap:8px;margin-top:12px"><button id="cardsTab" class="primary" onclick="showView('cards')">カード一覧</button><button id="coordsTab" onclick="showView('coords')">コーデ一覧</button></div>
@@ -388,6 +388,42 @@ async function backupData(){
         }
       };
     });
+
+    const data={
+      app:"aikatsu-encore-card-manager",
+      version:3,
+      storage:"IndexedDB",
+      exportedAt:new Date().toISOString(),
+      cards:records
+    };
+
+    const json=JSON.stringify(data,null,2);
+    const blob=new Blob([json],{
+      type:"application/json;charset=utf-8"
+    });
+
+    const url=URL.createObjectURL(blob);
+
+    box.innerHTML="<b>バックアップを作成しました（"+records.length+"枚）</b><br><br>";
+
+    const a=document.createElement("a");
+    a.href=url;
+    a.download="aikatsu-encore-backup.json";
+    a.textContent="💾 このボタンを押して保存";
+    a.style.display="inline-block";
+    a.style.padding="14px 18px";
+    a.style.borderRadius="14px";
+    a.style.background="#e84f9b";
+    a.style.color="#fff";
+    a.style.fontWeight="700";
+    a.style.textDecoration="none";
+
+    box.appendChild(a);
+
+  }catch(err){
+    alert("バックアップを作れませんでした。\n\nエラー："+(err&&err.message?err.message:String(err)));
+  }
+});
 
     const data={
       app:"aikatsu-encore-card-manager",
