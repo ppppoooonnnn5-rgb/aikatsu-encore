@@ -369,6 +369,10 @@ let addTapLock = false;
   function getCoordBaseName(card){
   let name=card.name||"";
 
+      if(card.code==="EP-037_N"||card.code==="EP-038_N"){
+    return "セーラーマリン";
+  }
+
   const suffixes={
     "トップス":[
       "キャミソール","ワンショルダー","トップス",
