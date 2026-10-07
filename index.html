@@ -436,7 +436,7 @@ function autoCreateCoordForCard(card){
     coords.unshift(coord);
   }
 
-  if(card.category==="トップス"&&!coord.top)coord.top=card.id;
+  if((card.category==="トップス"||card.category==="トップス＆ボトムス")&&!coord.top)coord.top=card.id;
   if(card.category==="ボトムス"&&!coord.bottom)coord.bottom=card.id;
   if(card.category==="シューズ"&&!coord.shoes)coord.shoes=card.id;
   if(card.category==="アクセサリー"&&!coord.acc)coord.acc=card.id;
