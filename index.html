@@ -802,17 +802,17 @@ async function syncOfficialCards(){
           : "公式";
 
             const meta=OFFICIAL_CARD_META[code];
-
+      const jsonMeta=data.cards.find(c=>c.code===code);
       const card={
         id:Date.now()+Math.random(),
         code:code,
-        name:item.name||meta?.[0]||code,
+        name:item.name||jsonMeta?.name||meta?.[0]||code,
         set:item.set||setName,
         promo:item.promo||(isPromo?"プロモ":"通常"),
-        type:item.type||meta?.[2]||"なし",
-        brand:item.brand||meta?.[1]||"未設定",
-        category:item.category||meta?.[3]||"トップス",
-        rarity:item.rarity||meta?.[4]||rarity,
+        type:item.type||jsonMeta?.type||meta?.[2]||"なし",
+        brand:item.brand||jsonMeta?.brand||meta?.[1]||"未設定",
+      category:item.category||jsonMeta?.category||meta?.[3]||"トップス",
+        rarity:item.rarity||jsonMeta?.rarity||meta?.[4]||rarity,
         status:"欲しい",
         quantity:1,
         image:item.image||OFFICIAL_CARD_IMAGE_BASE+code+".webp",
