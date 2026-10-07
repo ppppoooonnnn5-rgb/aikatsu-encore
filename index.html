@@ -394,7 +394,8 @@ async function backupData(){
       version:3,
       storage:"IndexedDB",
       exportedAt:new Date().toISOString(),
-      cards:records
+      cards:records,
+      coords:[]
     };
 
     const json=JSON.stringify(data,null,2);
