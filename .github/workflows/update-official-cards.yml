@@ -22,7 +22,10 @@ jobs:
           python-version: "3.x"
 
       - name: Install packages
-        run: pip install requests beautifulsoup4
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-jpn
+          pip install requests beautifulsoup4 pillow pytesseract
 
       - name: Update official card list
         run: |
@@ -30,72 +33,431 @@ jobs:
           import requests
           import re
           import json
+          import os
+          import io
+          import time
+
           from bs4 import BeautifulSoup
           from urllib.parse import urljoin
           from datetime import datetime, timezone
+          from PIL import Image
+          import pytesseract
 
           BASE = "https://dcd.aikatsu.com"
           HOME = BASE + "/encore/"
+          IMAGE_BASE = BASE + "/encore/images/cardlist/card/"
 
           session = requests.Session()
           session.headers.update({
               "User-Agent": "Mozilla/5.0"
           })
 
+          # =========================================================
+          # index.html に既に登録されている正確なカード情報を読む
+          # =========================================================
+
+          meta_maps = {}
+
+          try:
+              with open("index.html", "r", encoding="utf-8") as f:
+                  index_html = f.read()
+
+              pattern = re.compile(
+                  r'"((?:E\d+-\d+|EP-\d+)_(?:PR|ER|R|N))":'
+                  r'\["([^"]*)","([^"]*)","([^"]*)","([^"]*)","([^"]*)"\]'
+              )
+
+              for m in pattern.finditer(index_html):
+                  code = m.group(1)
+
+                  meta_maps[code] = {
+                      "name": m.group(2),
+                      "brand": m.group(3),
+                      "type": m.group(4),
+                      "category": m.group(5),
+                      "rarity": m.group(6)
+                  }
+
+              print("index.html から既存メタデータ:", len(meta_maps), "枚")
+
+          except Exception as e:
+              print("index.html の読み込み失敗:", e)
+
+          # =========================================================
+          # 公式サイトからカードリストURLを発見
+          # =========================================================
+
           urls = {HOME}
 
-          # 公式トップページからカードリストのURLを探す
-          html = session.get(HOME, timeout=30).text
-          soup = BeautifulSoup(html, "html.parser")
+          try:
+              html = session.get(HOME, timeout=30).text
+              soup = BeautifulSoup(html, "html.parser")
 
-          for a in soup.select("a[href]"):
-              url = urljoin(BASE, a["href"])
-              if "/encore/cardlist/" in url:
-                  urls.add(url)
+              for a in soup.select("a[href]"):
+                  url = urljoin(BASE, a["href"])
+
+                  if "/encore/cardlist/" in url:
+                      urls.add(url)
+
+          except Exception as e:
+              print("公式トップ取得失敗:", e)
 
           # 見つかったカードリストからさらにカードリストURLを探す
           for page in list(urls):
+
               try:
                   html = session.get(page, timeout=30).text
                   soup = BeautifulSoup(html, "html.parser")
 
                   for a in soup.select("a[href]"):
                       url = urljoin(BASE, a["href"])
+
                       if "/encore/cardlist/" in url:
                           urls.add(url)
+
               except Exception as e:
                   print("ページ取得失敗:", page, e)
 
+          # =========================================================
+          # カード番号を取得
+          # =========================================================
+
           cards = {}
 
-          # 発見したすべてのカードリストからカード番号を取得
+          code_pattern = re.compile(
+              r'(?:E\d+-\d+|EP-\d+)_(?:PR|ER|R|N)'
+          )
+
           for url in sorted(urls):
+
               try:
                   html = session.get(url, timeout=30).text
 
-                  codes = re.findall(
-                      r'(?:E\d+-\d+|EP-\d+)_(?:PR|ER|R|N)',
-                      html
-                  )
+                  codes = code_pattern.findall(html)
 
                   for code in codes:
+
                       cards[code] = {
                           "code": code,
                           "source": url
                       }
 
-                  print(url, "→", len(codes), "cards")
+                  print(
+                      url,
+                      "→",
+                      len(codes),
+                      "cards"
+                  )
 
               except Exception as e:
-                  print("カードリスト取得失敗:", url, e)
+
+                  print(
+                      "カードリスト取得失敗:",
+                      url,
+                      e
+                  )
+
+          # =========================================================
+          # 既存 official-cards.json があれば読み込む
+          # =========================================================
+
+          old_cards = {}
+
+          if os.path.exists("official-cards.json"):
+
+              try:
+
+                  with open(
+                      "official-cards.json",
+                      "r",
+                      encoding="utf-8"
+                  ) as f:
+
+                      old_data = json.load(f)
+
+                  for card in old_data.get("cards", []):
+
+                      if card.get("code"):
+                          old_cards[card["code"]] = card
+
+              except Exception as e:
+
+                  print(
+                      "既存official-cards.json読み込み失敗:",
+                      e
+                  )
+
+          # =========================================================
+          # OCR用の既知の候補
+          # =========================================================
+
+          brands = [
+              "ノーブランド",
+              "エンジェリーシュガー",
+              "フューチャリングガール",
+              "スパイシーアゲハ",
+              "ドリーミークラウン",
+              "メープルリボン"
+          ]
+
+          categories = [
+              "トップス&ボトムス",
+              "トップス",
+              "ボトムス",
+              "シューズ",
+              "フルコーデ",
+              "アクセサリー"
+          ]
+
+          def rarity_from_code(code):
+
+              if code.endswith("_PR"):
+                  return "プレミアムレア"
+
+              if code.endswith("_ER"):
+                  return "アンコールレア"
+
+              if code.endswith("_R"):
+                  return "レア"
+
+              if code.endswith("_N"):
+                  return "ノーマル"
+
+              return "未設定"
+
+          # =========================================================
+          # OCR
+          # =========================================================
+
+          def read_new_card(code):
+
+              image_url = IMAGE_BASE + code + ".webp"
+
+              result = {
+                  "name": code,
+                  "brand": "未設定",
+                  "type": "なし",
+                  "category": "未設定",
+                  "rarity": rarity_from_code(code),
+                  "image": image_url,
+                  "ocr": True
+              }
+
+              try:
+
+                  response = session.get(
+                      image_url,
+                      timeout=30
+                  )
+
+                  response.raise_for_status()
+
+                  image = Image.open(
+                      io.BytesIO(response.content)
+                  )
+
+                  # 少し拡大してOCR
+                  width, height = image.size
+
+                  scale = 2
+
+                  image = image.resize(
+                      (
+                          width * scale,
+                          height * scale
+                      )
+                  )
+
+                  text = pytesseract.image_to_string(
+                      image,
+                      lang="jpn+eng",
+                      config="--psm 6"
+                  )
+
+                  print(
+                      "OCR:",
+                      code,
+                      repr(text[:500])
+                  )
+
+                  # -----------------------------
+                  # ブランド
+                  # -----------------------------
+
+                  for brand in brands:
+
+                      if brand in text:
+
+                          result["brand"] = brand
+                          break
+
+                  # -----------------------------
+                  # カテゴリ
+                  # -----------------------------
+
+                  for category in categories:
+
+                      if category in text:
+
+                          result["category"] = category
+                          break
+
+                  # -----------------------------
+                  # 名前
+                  # -----------------------------
+                  #
+                  # カード名はOCRで完全一致しない場合があるため、
+                  # まず短い行を候補にする
+                  #
+
+                  lines = []
+
+                  for line in text.splitlines():
+
+                      line = line.strip()
+
+                      if not line:
+                          continue
+
+                      if len(line) < 2:
+                          continue
+
+                      if code in line:
+                          continue
+
+                      if line in brands:
+                          continue
+
+                      if line in categories:
+                          continue
+
+                      lines.append(line)
+
+                  # カード名候補
+                  if lines:
+
+                      # 最初の比較的短い日本語行を採用
+                      candidates = sorted(
+                          lines,
+                          key=lambda x: (
+                              len(x) > 40,
+                              len(x)
+                          )
+                      )
+
+                      if candidates:
+
+                          result["name"] = candidates[0]
+
+                  return result
+
+              except Exception as e:
+
+                  print(
+                      "OCR失敗:",
+                      code,
+                      e
+                  )
+
+                  return result
+
+          # =========================================================
+          # 新カードのメタデータを作る
+          # =========================================================
+
+          new_count = 0
+          known_count = 0
+          ocr_count = 0
+
+          output_cards = []
+
+          for code in sorted(cards):
+
+              # ---------------------------------------------
+              # 既存 index.html の正確なデータを最優先
+              # ---------------------------------------------
+
+              if code in meta_maps:
+
+                  meta = meta_maps[code]
+
+                  item = {
+                      "code": code,
+                      "name": meta["name"],
+                      "brand": meta["brand"],
+                      "type": meta["type"],
+                      "category": meta["category"],
+                      "rarity": meta["rarity"],
+                      "image": IMAGE_BASE + code + ".webp",
+                      "source": cards[code]["source"],
+                      "metadataSource": "index.html"
+                  }
+
+                  known_count += 1
+
+              # ---------------------------------------------
+              # 以前のJSONにあるデータも維持
+              # ---------------------------------------------
+
+              elif code in old_cards:
+
+                  item = old_cards[code].copy()
+
+                  item["code"] = code
+                  item["image"] = (
+                      item.get("image")
+                      or IMAGE_BASE + code + ".webp"
+                  )
+
+                  item["source"] = cards[code]["source"]
+
+                  known_count += 1
+
+              # ---------------------------------------------
+              # 完全に新しいカード
+              # ---------------------------------------------
+
+              else:
+
+                  print(
+                      "新カード発見:",
+                      code
+                  )
+
+                  ocr = read_new_card(code)
+
+                  item = {
+                      "code": code,
+                      "name": ocr["name"],
+                      "brand": ocr["brand"],
+                      "type": ocr["type"],
+                      "category": ocr["category"],
+                      "rarity": ocr["rarity"],
+                      "image": ocr["image"],
+                      "source": cards[code]["source"],
+                      "metadataSource": "OCR"
+                  }
+
+                  new_count += 1
+                  ocr_count += 1
+
+                  # 連続アクセスを少し抑える
+                  time.sleep(0.5)
+
+              output_cards.append(item)
+
+          # =========================================================
+          # JSON保存
+          # =========================================================
 
           data = {
-              "updatedAt": datetime.now(timezone.utc).isoformat(),
+              "updatedAt": datetime.now(
+                  timezone.utc
+              ).isoformat(),
+
               "sources": sorted(urls),
-              "cards": sorted(
-                  cards.values(),
-                  key=lambda x: x["code"]
-              )
+
+              "cards": output_cards
           }
 
           with open(
@@ -103,6 +465,7 @@ jobs:
               "w",
               encoding="utf-8"
           ) as f:
+
               json.dump(
                   data,
                   f,
@@ -110,14 +473,26 @@ jobs:
                   indent=2
               )
 
-          print("発見したカード:", len(cards), "枚")
+          print("")
+          print("================================")
+          print("公式カード更新完了")
+          print("================================")
+          print("発見したカード:", len(output_cards), "枚")
+          print("既存メタデータ:", known_count, "枚")
+          print("新規カード:", new_count, "枚")
+          print("OCR実行:", ocr_count, "枚")
           print("確認したページ:", len(urls), "ページ")
+          print("================================")
+
           PY
 
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add official-cards.json
+
           git diff --cached --quiet || git commit -m "Update official card list"
+
           git push
