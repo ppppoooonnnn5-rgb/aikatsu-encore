@@ -13,6 +13,7 @@
 :root{--bg:#fff7fb;--card:#fff;--text:#382d38;--muted:#8a7d88;--accent:#e9579a;--accent2:#7b61ff;--line:#eadfe7;--chip:#f6e9f1}
 *{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#fff7fb,#f7f4ff);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",sans-serif;color:var(--text)}
 header{position:sticky;top:0;z-index:5;background:#ffffffdd;backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:16px}
+header.compact .top,header.compact .search,header.compact #storageStatus,header.compact .save-version{display:none}
 .wrap{max-width:1200px;margin:auto}.top{display:flex;gap:14px;align-items:center;justify-content:space-between}.logo{font-weight:900;font-size:20px}.logo span{color:var(--accent)}
 button,.filebtn{border:0;border-radius:12px;padding:11px 15px;font-weight:700;cursor:pointer;background:#f1e9ef;color:var(--text)}
 .primary{background:linear-gradient(135deg,var(--accent),#ff7ab5);color:#fff}.search{margin-top:14px;display:flex;gap:10px}.search input{flex:1;padding:13px 15px;border:1px solid var(--line);border-radius:14px;font-size:15px;background:#fff}
@@ -31,7 +32,7 @@ dialog{border:0;border-radius:20px;width:min(560px,92vw);padding:0;box-shadow:0 
 <div class="top"><div class="logo">Aikatsu <span>Encore</span> Card Manager <small style="font-size:10px;opacity:.55">v17</small></div><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end"><button onclick="backupDlg.showModal()">⬇️ バックアップ</button><button onclick="openRestore()">⬆️ 復元</button><button class="primary" onclick="openAdd()">＋ カード追加</button><button onclick="openOfficialImport()">🌟 公式1弾を一括登録</button><button class="primary" onclick="applyOfficialMetadata()">✨ 公式データを反映</button><button onclick="createCoordsForExistingCards()">🧩 既存カードをコーデ化</button></div></div>
 <div class="search"><input id="q" placeholder="カード名・ブランド・弾数などで検索…" oninput="render()"><button onclick="resetFilters()">リセット</button></div>
 <div style="margin-top:8px;font-size:11px;color:var(--muted)">保存版 v5</div><div id="storageStatus" style="margin-top:8px;font-size:12px;color:var(--muted)">💾 保存方式を準備中…</div>
-<div style="display:flex;gap:8px;margin-top:12px"><button id="cardsTab" class="primary" onclick="showView('cards')">カード一覧</button><button id="coordsTab" onclick="showView('coords')">コーデ一覧</button></div>
+<div style="display:flex;gap:8px;margin-top:12px"><button id="cardsTab" class="primary" onclick="showView('cards')">カード一覧</button><button id="coordsTab" onclick="showView('coords')">コーデ一覧</button><button onclick="toggleHeader()">⌃ 縮める</button></div>
 </div></header>
 <main class="wrap">
 <div class="stats"><div class="stat">登録 <b id="count">0</b> 枚</div><div class="stat">表示 <b id="shown">0</b> 枚</div></div>
@@ -670,7 +671,10 @@ toggleEditQtyInput();
 
 let coords=JSON.parse(localStorage.getItem("aikatsu-encore-coords-v1")||"[]");
 function saveCoords(){localStorage.setItem("aikatsu-encore-coords-v1",JSON.stringify(coords))}
-function showView(view){
+function toggleHeader(){
+  document.querySelector("header").classList.toggle("compact");
+}
+  function showView(view){
   $("coordsView").style.display=view==="coords"?"block":"none";
   document.querySelector("main").style.display=view==="cards"?"block":"none";
   $("cardsTab").className=view==="cards"?"primary":"";
