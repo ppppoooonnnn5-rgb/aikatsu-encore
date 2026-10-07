@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T13:48:44.149704+00:00",
+  "updatedAt": "2026-10-07T13:55:27.857007+00:00",
   "sources": [
     "https://dcd.aikatsu.com/encore/",
     "https://dcd.aikatsu.com/encore/cardlist/",
@@ -8,431 +8,1180 @@
   "cards": [
     {
       "code": "E1-01_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "オーロラキスキャミソール",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "トップス",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-01_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-02_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "オーロラキスドレープスカート",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "ボトムス",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-02_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-03_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "オーロラキスバレエシューズ",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "シューズ",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-03_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-04_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "オーロラキスリボン",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "アクセサリー",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-04_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-05_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "アイスブルーフリルキャミソール",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "トップス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-05_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-06_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "アイスブルーフリルパニエ",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "ボトムス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-06_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-07_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "アイスブルーシューズ",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "シューズ",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-07_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-08_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ジュエルつきパープルリボン",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "アクセサリー",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-08_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-09_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "小花柄イエローワンピ",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "トップス＆ボトムス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-09_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-10_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ドリーミースタートップス",
+      "brand": "ドリーミークラウン",
+      "type": "キュート",
+      "category": "トップス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-10_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-11_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ドリーミースタースカート",
+      "brand": "ドリーミークラウン",
+      "type": "キュート",
+      "category": "ボトムス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-11_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-12_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ドリーミースターパンプス",
+      "brand": "ドリーミークラウン",
+      "type": "キュート",
+      "category": "シューズ",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-12_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-13_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "チャーミーリボントップス",
+      "brand": "メープルリボン",
+      "type": "キュート",
+      "category": "トップス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-13_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-14_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "チャーミーリボンスカート",
+      "brand": "メープルリボン",
+      "type": "キュート",
+      "category": "ボトムス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-14_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-15_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "チャーミーリボンサンダル",
+      "brand": "メープルリボン",
+      "type": "キュート",
+      "category": "シューズ",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-15_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-16_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "チャーミーリボンアクセ",
+      "brand": "メープルリボン",
+      "type": "キュート",
+      "category": "アクセサリー",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-16_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-17_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "クリアネスイエロートップス",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "トップス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-17_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-18_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "クリアネスイエロースカート",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "ボトムス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-18_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-19_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "クリアネスイエローパンプス",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "シューズ",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-19_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-20_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "クリアネスイエローアクセ",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "アクセサリー",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-20_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-21_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ピンクステージベスト",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "トップス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-21_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-22_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ピンクステージスカート",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-22_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-23_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ピンクステージシューズ",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "シューズ",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-23_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-24_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "パフスリーブレモンカラーボレロ",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "トップス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-24_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-25_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ラベンダーフリルスカート",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-25_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-26_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "イエロー編み上げブーツ",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "シューズ",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-26_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-27_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ピンクブロッサムトップス",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "トップス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-27_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-28_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ピンクブロッサムスカート",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-28_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-29_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ピンクブロッサムブーツ",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "シューズ",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-29_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-30_ER",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "オデットスワン",
+      "brand": "ドリーミークラウン",
+      "type": "キュート",
+      "category": "フルコーデ",
+      "rarity": "アンコールレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-30_ER.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-31_ER",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "リルリボンストーリー",
+      "brand": "メープルリボン",
+      "type": "キュート",
+      "category": "フルコーデ",
+      "rarity": "アンコールレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-31_ER.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-32_ER",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "オーロラペガサス",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "フルコーデ",
+      "rarity": "アンコールレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-32_ER.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-33_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "天の川コズミックワンショルダー",
+      "brand": "フューチャリングガール",
+      "type": "クール",
+      "category": "トップス",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-33_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-34_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "天の川コズミックスカート",
+      "brand": "フューチャリングガール",
+      "type": "クール",
+      "category": "ボトムス",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-34_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-35_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "天の川コズミックブーツ",
+      "brand": "フューチャリングガール",
+      "type": "クール",
+      "category": "シューズ",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-35_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-36_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "天の川コズミックカチューシャ",
+      "brand": "フューチャリングガール",
+      "type": "クール",
+      "category": "アクセサリー",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-36_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-37_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "プリズムサイバーグラフィックワンピ",
+      "brand": "フューチャリングガール",
+      "type": "クール",
+      "category": "トップス＆ボトムス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-37_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-38_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ブラックモダンボレロ",
+      "brand": "フューチャリングガール",
+      "type": "クール",
+      "category": "トップス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-38_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-39_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ブラックフューチャーエナメルショートパンツ",
+      "brand": "フューチャリングガール",
+      "type": "クール",
+      "category": "ボトムス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-39_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-40_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ブラックフューチャーブーツ",
+      "brand": "フューチャリングガール",
+      "type": "クール",
+      "category": "シューズ",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-40_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-41_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ブルーステージブラウス",
+      "brand": "ノーブランド",
+      "type": "クール",
+      "category": "トップス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-41_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-42_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ブルーステージスカート",
+      "brand": "ノーブランド",
+      "type": "クール",
+      "category": "ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-42_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-43_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ブルーステージブーツ",
+      "brand": "ノーブランド",
+      "type": "クール",
+      "category": "シューズ",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-43_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-44_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ブラックストライプジャケット",
+      "brand": "ノーブランド",
+      "type": "クール",
+      "category": "トップス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-44_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-45_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ダイヤモンドチェックスカート",
+      "brand": "ノーブランド",
+      "type": "クール",
+      "category": "ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-45_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-46_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ブルーストラップシューズ",
+      "brand": "ノーブランド",
+      "type": "クール",
+      "category": "シューズ",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-46_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-47_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ネイビーブロッサムトップス",
+      "brand": "ノーブランド",
+      "type": "クール",
+      "category": "トップス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-47_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-48_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ネイビーブロッサムスカート",
+      "brand": "ノーブランド",
+      "type": "クール",
+      "category": "ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-48_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-49_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ネイビーブロッサムブーツ",
+      "brand": "ノーブランド",
+      "type": "クール",
+      "category": "シューズ",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-49_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-50_ER",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ドリームエミネンス",
+      "brand": "ノーブランド",
+      "type": "クール",
+      "category": "フルコーデ",
+      "rarity": "アンコールレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-50_ER.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-51_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "レジェンダリールージュドレス",
+      "brand": "ノーブランド",
+      "type": "セクシー",
+      "category": "トップス＆ボトムス",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-51_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-52_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "レジェンダリールージュパンプス",
+      "brand": "ノーブランド",
+      "type": "セクシー",
+      "category": "シューズ",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-52_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-53_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "アゲハレッドコクーンワンピ",
+      "brand": "スパイシーアゲハ",
+      "type": "セクシー",
+      "category": "トップス＆ボトムス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-53_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-54_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "アゲハレッドミュール",
+      "brand": "スパイシーアゲハ",
+      "type": "セクシー",
+      "category": "シューズ",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-54_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-55_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "パープルジュエリーワンピ",
+      "brand": "スパイシーアゲハ",
+      "type": "セクシー",
+      "category": "トップス＆ボトムス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-55_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-56_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ゴールドチェーングラディエーター",
+      "brand": "スパイシーアゲハ",
+      "type": "セクシー",
+      "category": "シューズ",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-56_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-57_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "アゲハロゴフリルトップス",
+      "brand": "スパイシーアゲハ",
+      "type": "セクシー",
+      "category": "トップス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-57_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-58_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "アゲハファーつきスカート",
+      "brand": "スパイシーアゲハ",
+      "type": "セクシー",
+      "category": "ボトムス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-58_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-59_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ブラックシフォンカチューシャ",
+      "brand": "スパイシーアゲハ",
+      "type": "セクシー",
+      "category": "アクセサリー",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-59_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-60_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "パープルステージトップス",
+      "brand": "ノーブランド",
+      "type": "セクシー",
+      "category": "トップス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-60_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-61_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "パープルステージスカート",
+      "brand": "ノーブランド",
+      "type": "セクシー",
+      "category": "ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-61_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-62_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "パープルステージニーハイパンプス",
+      "brand": "ノーブランド",
+      "type": "セクシー",
+      "category": "シューズ",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-62_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-63_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "プッチがらシャイニングトップス",
+      "brand": "ノーブランド",
+      "type": "セクシー",
+      "category": "トップス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-63_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-64_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ブラックウォッシュデニムミニ",
+      "brand": "ノーブランド",
+      "type": "セクシー",
+      "category": "ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-64_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-65_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "セクシーロゴチューブトップ",
+      "brand": "ノーブランド",
+      "type": "セクシー",
+      "category": "トップス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-65_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-66_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "ベルトつきレザースカート",
+      "brand": "ノーブランド",
+      "type": "セクシー",
+      "category": "ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-66_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-67_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "サイハイレザーブーツ",
+      "brand": "ノーブランド",
+      "type": "セクシー",
+      "category": "シューズ",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-67_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-68_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "パープルブロッサムトップス",
+      "brand": "ノーブランド",
+      "type": "セクシー",
+      "category": "トップス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-68_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-69_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "パープルブロッサムスカート",
+      "brand": "ノーブランド",
+      "type": "セクシー",
+      "category": "ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-69_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-70_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "パープルブロッサムブーツ",
+      "brand": "ノーブランド",
+      "type": "セクシー",
+      "category": "シューズ",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-70_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-71_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "サンシャインスターウェイトップス",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "トップス",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-71_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-72_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "サンシャインスターウェイスカート",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "ボトムス",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-72_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-73_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "サンシャインスターウェイシューズ",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "シューズ",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-73_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-74_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "サンシャインスターウェイカチューシャ",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "アクセサリー",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-74_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-75_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "サンライズスターウェイトップス",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "トップス",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-75_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-76_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "サンライズスターウェイスカート",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "ボトムス",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-76_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-77_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "サンライズスターウェイシューズ",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "シューズ",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-77_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-78_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "サンライズスターウェイカチューシャ",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "アクセサリー",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-78_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-79_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "サンセットスターウェイトップス",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "トップス",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-79_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-80_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "サンセットスターウェイスカート",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "ボトムス",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-80_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-81_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "サンセットスターウェイシューズ",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "シューズ",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-81_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-82_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "サンセットスターウェイカチューシャ",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "アクセサリー",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-82_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-83_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "イエローブロッサムトップス",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "トップス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-83_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-84_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "イエローブロッサムスカート",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-84_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "E1-85_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/"
+      "name": "イエローブロッサムブーツ",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "シューズ",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-85_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-001_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "ピンクステージベスト＆スカート",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "トップス＆ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-001_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-002_PR",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "レジェンダリールージュティアラ",
+      "brand": "ノーブランド",
+      "type": "セクシー",
+      "category": "アクセサリー",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-002_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-003_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "エメラルドコクーンワンピ",
+      "brand": "スパイシーアゲハ",
+      "type": "セクシー",
+      "category": "トップス＆ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-003_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-004_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "エメラルドアゲハミュール",
+      "brand": "スパイシーアゲハ",
+      "type": "セクシー",
+      "category": "シューズ",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-004_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-005_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "ピンクシフォンカチューシャ",
+      "brand": "スパイシーアゲハ",
+      "type": "セクシー",
+      "category": "アクセサリー",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-005_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-006_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "ピンクリボンつきフリルシャツ",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "トップス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-006_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-007_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "ピンクアーガイルカーデ",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "トップス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-007_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-008_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "ピンクプリーツスカート",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-008_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-009_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "ガーリーローファー",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "シューズ",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-009_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-010_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "ピンクリボンカチューシャ",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "アクセサリー",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-010_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-011_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "スターライト学園ピンクジャージ",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "トップス＆ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-011_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-012_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "スターライト学園ブルージャージ",
+      "brand": "ノーブランド",
+      "type": "クール",
+      "category": "トップス＆ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-012_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-013_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "スターライト学園パープルジャージ",
+      "brand": "ノーブランド",
+      "type": "セクシー",
+      "category": "トップス＆ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-013_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-014_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "スターライト学園オレンジジャージ",
+      "brand": "ノーブランド",
+      "type": "ポップ",
+      "category": "トップス＆ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-014_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-015_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "スターライト学園スニーカー",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "シューズ",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-015_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-016_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "ブラックダイヤモンドジュエリーワンピ",
+      "brand": "スパイシーアゲハ",
+      "type": "セクシー",
+      "category": "トップス＆ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-016_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-017_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "ピンクの小花柄ワンピ",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "トップス＆ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-017_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-018_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "編み上げラベンダーブーツ",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "シューズ",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-018_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-029_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "スターライト学園制服",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "トップス＆ボトムス",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-029_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-030_R",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "スターライト学園ブーツ",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "シューズ",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-030_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-037_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "エンブレムつきセーラーマリントップス＆スカート",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "トップス＆ボトムス",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-037_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     },
     {
       "code": "EP-038_N",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+      "name": "ブルーワークブーツ",
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "シューズ",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-038_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+      "metadataSource": "index.html"
     }
   ]
 }
