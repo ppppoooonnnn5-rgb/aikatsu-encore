@@ -79,7 +79,7 @@ dialog{border:0;border-radius:20px;width:min(560px,92vw);padding:0;box-shadow:0 
 <label>登録時の所持状況</label><select id="officialStatus"><option>欲しい</option><option>持ってる</option><option>ダブり</option></select>
 <label style="display:flex;gap:8px;align-items:center;margin-top:10px"><input id="officialSkipExisting" type="checkbox" checked style="width:auto">同じカード番号が既にある場合は追加しない</label>
 <div id="officialProgress" style="display:none;margin-top:12px;padding:10px;border-radius:12px;background:#fff8ef;font-size:13px"></div>
-<div class="actions"><button type="button" onclick="officialDlg.close()">キャンセル</button><button type="button" class="primary" onclick="importOfficialFirstSet()">85枚を一括登録</button></div>
+<div class="actions"><button type="button" onclick="officialDlg.close()">キャンセル</button><button type="button" class="primary" onclick="importOfficialFirstSet()">85枚を一括登録</button><button type="button" onclick="importPromoCards()">🎁 プロモ22枚を一括登録</button></div>
 <div style="margin-top:12px;font-size:11px;color:var(--muted)">カード画像・カード情報は公式サイトの掲載内容をもとにしています。画像は公式サイトから読み込みます。</div>
 </div></dialog>
 
