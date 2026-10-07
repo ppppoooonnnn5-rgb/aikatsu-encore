@@ -289,32 +289,40 @@ function changeQty(id,delta){const c=cards.find(x=>x.id===id);if(!c)return;c.qua
 }
 let addTapLock = false;
   function autoCreateCoordForCard(card){
-  const exists=coords.some(c=>
-    c.autoCardId===card.id
-  );
+  let coord=coords.find(c=>c.autoCardName===card.name);
 
-  if(exists)return;
+  if(!coord){
+    coord={
+      id:Date.now()+Math.random(),
+      name:card.name+"コーデ",
+      top:null,
+      bottom:null,
+      shoes:null,
+      acc:null,
+      status:"未完成",
+      memo:"",
+      autoCardName:card.name
+    };
+    coords.unshift(coord);
+  }
 
-  coords.unshift({
-    id:Date.now()+Math.random(),
-    name:card.name,
-    top:card.id,
-    bottom:null,
-    shoes:null,
-    acc:null,
-    status:"未完成",
-    memo:"",
-    autoCardId:card.id
-  });
+  if(card.category==="トップス")coord.top=card.id;
+  if(card.category==="ボトムス")coord.bottom=card.id;
+  if(card.category==="シューズ")coord.shoes=card.id;
+  if(card.category==="アクセサリー")coord.acc=card.id;
 
   saveCoords();
 }
   function createCoordsForExistingCards(){
+  coords=coords.filter(c=>!c.autoCardId&&!c.autoCardName);
+
   cards.forEach(card=>{
     autoCreateCoordForCard(card);
   });
+
+  saveCoords();
   renderCoords();
-  alert("今あるカードのコーデを作成しました。");
+  alert("カード名ごとにコーデをまとめました。");
 }
 async function addCard(event){
   if(event){ event.preventDefault(); event.stopPropagation(); }
