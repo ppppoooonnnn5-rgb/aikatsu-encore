@@ -423,7 +423,7 @@ async function backupData(){
   }catch(err){
     alert("バックアップを作れませんでした。\n\nエラー："+(err&&err.message?err.message:String(err)));
   }
-
+}
 
 function showBackupMessage(msg){
   const box=$("backupResult");
