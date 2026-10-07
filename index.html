@@ -406,19 +406,31 @@ async function backupData(){
 
     box.innerHTML="<b>バックアップを作成しました（"+records.length+"枚）</b><br><br>";
 
-    const a=document.createElement("a");
-    a.href=url;
-    a.download="aikatsu-encore-backup.json";
-    a.textContent="💾 このボタンを押して保存";
-    a.style.display="inline-block";
-    a.style.padding="14px 18px";
-    a.style.borderRadius="14px";
-    a.style.background="#e84f9b";
-    a.style.color="#fff";
-    a.style.fontWeight="700";
-    a.style.textDecoration="none";
+    const file=new File(
+  [json],
+  "aikatsu-encore-backup.json",
+  {type:"application/json"}
+);
 
-    box.appendChild(a);
+if(navigator.canShare && navigator.canShare({files:[file]})){
+  await navigator.share({
+    files:[file],
+    title:"アイカツ バックアップ"
+  });
+}else{
+  const a=document.createElement("a");
+  a.href=url;
+  a.download="aikatsu-encore-backup.json";
+  a.textContent="💾 このボタンを押して保存";
+  a.style.display="inline-block";
+  a.style.padding="14px 18px";
+  a.style.borderRadius="14px";
+  a.style.background="#e84f9b";
+  a.style.color="#fff";
+  a.style.fontWeight="700";
+  a.style.textDecoration="none";
+  box.appendChild(a);
+}
 
   }catch(err){
     alert("バックアップを作れませんでした。\n\nエラー："+(err&&err.message?err.message:String(err)));
