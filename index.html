@@ -266,7 +266,49 @@ function updateCard(e){
  if(f){compressImage(f).then(img=>apply(img)).catch(()=>apply(null))}else apply(null);
 }
 function changeQty(id,delta){const c=cards.find(x=>x.id===id);if(!c)return;c.quantity=Math.max(1,(c.quantity||1)+delta);saveOne(c).then(render).catch(()=>alert("保存に失敗しました。"))}
+  async function deleteCard(id){
+  const card=cards.find(c=>c.id===id);
+  if(!card)return;
+
+  if(!confirm(`「${card.name}」を削除しますか？`))return;
+
+  try{
+    const tx=db.transaction(STORE,"readwrite");
+    tx.objectStore(STORE).delete(id);
+
+    cards=cards.filter(c=>c.id!==id);
+
+    coords=coords.filter(c=>c.autoCardId!==id);
+    saveCoords();
+
+    render();
+    renderCoords();
+  }catch(err){
+    alert("カードを削除できませんでした。");
+  }
+}
 let addTapLock = false;
+  function autoCreateCoordForCard(card){
+  const exists=coords.some(c=>
+    c.autoCardId===card.id
+  );
+
+  if(exists)return;
+
+  coords.unshift({
+    id:Date.now()+Math.random(),
+    name:card.name,
+    top:card.id,
+    bottom:null,
+    shoes:null,
+    acc:null,
+    status:"未完成",
+    memo:"",
+    autoCardId:card.id
+  });
+
+  saveCoords();
+}
 async function addCard(event){
   if(event){ event.preventDefault(); event.stopPropagation(); }
   const btn=$("addCardBtn"), status=$("addCardStatus");
@@ -304,6 +346,7 @@ async function addCard(event){
     const card={id:Date.now()+Math.random(),name,set:$("setInput").value||"未分類",promo:$("promoInput").value,type:$("typeInput").value,brand:$("brandInput").value||"未分類",category:$("categoryInput").value,rarity:$("rarityInput").value,status:$("statusInput").value,quantity:Math.max(1,parseInt($("qtyInput").value||"1")),image};
     await idbPut(card);
     cards.unshift(card);
+    autoCreateCoordForCard(card);
     render();
     showStatus("登録しました！");
     setTimeout(()=>{ $("dlg").close(); $("dlg").querySelector("form").reset(); toggleQtyInput(); },250);
