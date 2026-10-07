@@ -766,7 +766,70 @@ function openCoordDetail(id){
  $("coordDetailBody").innerHTML=body;
  $("coordDetailDlg").showModal();
 }
+async function syncOfficialCards(){
+  try{
+    const res=await fetch("./official-cards.json?"+Date.now());
+    if(!res.ok) return;
 
+    const data=await res.json();
+    if(!Array.isArray(data.cards)) return;
+
+    let added=0;
+
+    for(const item of data.cards){
+      const code=item.code;
+      if(!code) continue;
+
+      // すでに登録済みなら何もしない
+      if(cards.some(c=>c.code===code)) continue;
+
+      const parts=code.split("_");
+      const rarityCode=parts[1]||"N";
+
+      const rarity=
+        rarityCode==="PR"?"プレミアムレア":
+        rarityCode==="ER"?"アンコールレア":
+        rarityCode==="R"?"レア":
+        "ノーマル";
+
+      const isPromo=code.startsWith("EP-");
+
+      const setMatch=code.match(/^E(\\d+)-/);
+      const setName=setMatch
+        ? `第${setMatch[1]}弾`
+        : isPromo
+          ? "プロモーション"
+          : "公式";
+
+      const card={
+        id:Date.now()+Math.random(),
+        code:code,
+        name:code,
+        set:setName,
+        promo:isPromo?"プロモ":"通常",
+        type:"なし",
+        brand:"未設定",
+        category:"トップス",
+        rarity:rarity,
+        status:"欲しい",
+        quantity:1,
+        image:OFFICIAL_CARD_IMAGE_BASE+code+".webp",
+        source:"公式カード自動同期"
+      };
+
+      await idbPut(card);
+      cards.unshift(card);
+      added++;
+    }
+
+    if(added>0){
+      render();
+      console.log("公式カードを自動追加:",added,"枚");
+    }
+  }catch(err){
+    console.log("公式カード同期をスキップ:",err);
+  }
+}
 const addForm=$("addCardForm");
 const addBtn=$("addCardBtn");
 if(addForm){ addForm.addEventListener("submit", addCard); }
@@ -775,7 +838,7 @@ if(addBtn){
   addBtn.addEventListener("pointerup", (e)=>{ if(e.pointerType==="touch") addCard(e); }, {capture:true});
   addBtn.addEventListener("touchend", (e)=>{ addCard(e); }, {capture:true, passive:false});
 }
-initStorage();
+initStorage().then(()=>syncOfficialCards());
 </script>
 <script>
 if ("serviceWorker" in navigator) {
