@@ -224,7 +224,7 @@ async function applyOfficialMetadata(){
 }
 
 function openOfficialImport(){ $("officialProgress").style.display="none"; $("officialProgress").textContent=""; $("officialDlg").showModal(); }
-async 
+
 
 async function importOfficialFirstSet(){
   if(!storageReady){ try{await openDB(); let stored=await idbAll(); cards=stored.map(c=>({...c,status:c.status||"持ってる",quantity:Math.max(1,Number(c.quantity)||1)})); storageReady=true; }catch(e){alert("保存機能の準備に失敗しました。しばらく待ってから再試行してください。");return;} }
@@ -423,48 +423,7 @@ async function backupData(){
   }catch(err){
     alert("バックアップを作れませんでした。\n\nエラー："+(err&&err.message?err.message:String(err)));
   }
-});
 
-    const data={
-      app:"aikatsu-encore-card-manager",
-      version:3,
-      storage:"IndexedDB",
-      exportedAt:new Date().toISOString(),
-      cards:records
-    };
-
-    const json=JSON.stringify(data,null,2);
-
-    const d=new Date();
-    const pad=n=>String(n).padStart(2,"0");
-    const filename=`aikatsu-encore-backup-${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}.json`;
-
-    const blob=new Blob([json],{
-      type:"application/json;charset=utf-8"
-    });
-
-    const url=URL.createObjectURL(blob);
-
-    box.innerHTML="<b>バックアップを作成しました（"+records.length+"枚）</b><br><br>";
-
-    const a=document.createElement("a");
-    a.href=url;
-    a.download=filename;
-    a.textContent="💾 このボタンを押して保存";
-    a.style.display="inline-block";
-    a.style.padding="14px 18px";
-    a.style.borderRadius="14px";
-    a.style.background="#e84f9b";
-    a.style.color="#fff";
-    a.style.fontWeight="700";
-    a.style.textDecoration="none";
-
-    box.appendChild(a);
-
-  }catch(err){
-    alert("バックアップを作れませんでした。\n\nエラー："+(err&&err.message?err.message:String(err)));
-  }
-}
 
 function showBackupMessage(msg){
   const box=$("backupResult");
