@@ -288,28 +288,60 @@ function changeQty(id,delta){const c=cards.find(x=>x.id===id);if(!c)return;c.qua
   }
 }
 let addTapLock = false;
-  function autoCreateCoordForCard(card){
-  let coord=coords.find(c=>c.autoCardName===card.name);
+  function getCoordBaseName(card){
+  let name=card.name||"";
+
+  const suffixes={
+    "トップス":[
+      "キャミソール","ワンショルダー","トップス",
+      "ベスト","ブラウス","ボレロ","ジャケット",
+      "チューブトップ"
+    ],
+    "ボトムス":[
+      "ドレープスカート","ショートパンツ","スカート","パニエ","ミニ"
+    ],
+    "シューズ":[
+      "バレエシューズ","ニーハイパンプス","グラディエーター",
+      "パンプス","サンダル","ブーツ","ミュール","シューズ"
+    ],
+    "アクセサリー":[
+      "カチューシャ","リボン","アクセサリー","アクセ"
+    ]
+  };
+
+  const list=suffixes[card.category]||[];
+  for(const suffix of list){
+    if(name.endsWith(suffix)){
+      return name.slice(0,-suffix.length);
+    }
+  }
+
+  return name;
+}
+
+function autoCreateCoordForCard(card){
+  const baseName=getCoordBaseName(card);
+  let coord=coords.find(c=>c.autoCardName===baseName);
 
   if(!coord){
     coord={
       id:Date.now()+Math.random(),
-      name:card.name+"コーデ",
+      name:baseName+"コーデ",
       top:null,
       bottom:null,
       shoes:null,
       acc:null,
       status:"未完成",
       memo:"",
-      autoCardName:card.name
+      autoCardName:baseName
     };
     coords.unshift(coord);
   }
 
-  if(card.category==="トップス")coord.top=card.id;
-  if(card.category==="ボトムス")coord.bottom=card.id;
-  if(card.category==="シューズ")coord.shoes=card.id;
-  if(card.category==="アクセサリー")coord.acc=card.id;
+  if(card.category==="トップス"&&!coord.top)coord.top=card.id;
+  if(card.category==="ボトムス"&&!coord.bottom)coord.bottom=card.id;
+  if(card.category==="シューズ"&&!coord.shoes)coord.shoes=card.id;
+  if(card.category==="アクセサリー"&&!coord.acc)coord.acc=card.id;
 
   saveCoords();
 }
