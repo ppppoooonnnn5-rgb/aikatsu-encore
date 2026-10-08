@@ -1,9 +1,10 @@
 {
-  "updatedAt": "2026-10-08T00:06:41.802565+00:00",
+  "updatedAt": "2026-10-08T06:08:58.616144+00:00",
   "sources": [
     "https://dcd.aikatsu.com/encore/",
     "https://dcd.aikatsu.com/encore/cardlist/",
-    "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+    "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
+    "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R"
   ],
   "cards": [
     {
@@ -14,7 +15,7 @@
       "category": "トップス",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-01_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -25,7 +26,7 @@
       "category": "ボトムス",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-02_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -36,7 +37,7 @@
       "category": "シューズ",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-03_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -47,7 +48,7 @@
       "category": "アクセサリー",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-04_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -58,7 +59,7 @@
       "category": "トップス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-05_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -69,7 +70,7 @@
       "category": "ボトムス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-06_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -80,7 +81,7 @@
       "category": "シューズ",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-07_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -91,7 +92,7 @@
       "category": "アクセサリー",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-08_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -102,7 +103,7 @@
       "category": "トップス＆ボトムス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-09_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -113,7 +114,7 @@
       "category": "トップス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-10_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -124,7 +125,7 @@
       "category": "ボトムス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-11_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -135,7 +136,7 @@
       "category": "シューズ",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-12_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -146,7 +147,7 @@
       "category": "トップス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-13_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -157,7 +158,7 @@
       "category": "ボトムス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-14_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -168,7 +169,7 @@
       "category": "シューズ",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-15_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -179,7 +180,7 @@
       "category": "アクセサリー",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-16_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -190,7 +191,7 @@
       "category": "トップス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-17_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -201,7 +202,7 @@
       "category": "ボトムス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-18_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -212,7 +213,7 @@
       "category": "シューズ",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-19_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -223,7 +224,7 @@
       "category": "アクセサリー",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-20_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -234,7 +235,7 @@
       "category": "トップス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-21_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -245,7 +246,7 @@
       "category": "ボトムス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-22_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -256,7 +257,7 @@
       "category": "シューズ",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-23_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -267,7 +268,7 @@
       "category": "トップス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-24_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -278,7 +279,7 @@
       "category": "ボトムス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-25_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -289,7 +290,7 @@
       "category": "シューズ",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-26_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -300,7 +301,7 @@
       "category": "トップス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-27_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -311,7 +312,7 @@
       "category": "ボトムス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-28_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -322,7 +323,7 @@
       "category": "シューズ",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-29_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -333,7 +334,7 @@
       "category": "フルコーデ",
       "rarity": "アンコールレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-30_ER.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -344,7 +345,7 @@
       "category": "フルコーデ",
       "rarity": "アンコールレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-31_ER.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -355,7 +356,7 @@
       "category": "フルコーデ",
       "rarity": "アンコールレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-32_ER.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -366,7 +367,7 @@
       "category": "トップス",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-33_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -377,7 +378,7 @@
       "category": "ボトムス",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-34_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -388,7 +389,7 @@
       "category": "シューズ",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-35_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -399,7 +400,7 @@
       "category": "アクセサリー",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-36_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -410,7 +411,7 @@
       "category": "トップス＆ボトムス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-37_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -421,7 +422,7 @@
       "category": "トップス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-38_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -432,7 +433,7 @@
       "category": "ボトムス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-39_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -443,7 +444,7 @@
       "category": "シューズ",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-40_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -454,7 +455,7 @@
       "category": "トップス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-41_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -465,7 +466,7 @@
       "category": "ボトムス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-42_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -476,7 +477,7 @@
       "category": "シューズ",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-43_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -487,7 +488,7 @@
       "category": "トップス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-44_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -498,7 +499,7 @@
       "category": "ボトムス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-45_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -509,7 +510,7 @@
       "category": "シューズ",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-46_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -520,7 +521,7 @@
       "category": "トップス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-47_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -531,7 +532,7 @@
       "category": "ボトムス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-48_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -542,7 +543,7 @@
       "category": "シューズ",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-49_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -553,7 +554,7 @@
       "category": "フルコーデ",
       "rarity": "アンコールレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-50_ER.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -564,7 +565,7 @@
       "category": "トップス＆ボトムス",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-51_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -575,7 +576,7 @@
       "category": "シューズ",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-52_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -586,7 +587,7 @@
       "category": "トップス＆ボトムス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-53_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -597,7 +598,7 @@
       "category": "シューズ",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-54_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -608,7 +609,7 @@
       "category": "トップス＆ボトムス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-55_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -619,7 +620,7 @@
       "category": "シューズ",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-56_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -630,7 +631,7 @@
       "category": "トップス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-57_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -641,7 +642,7 @@
       "category": "ボトムス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-58_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -652,7 +653,7 @@
       "category": "アクセサリー",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-59_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -663,7 +664,7 @@
       "category": "トップス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-60_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -674,7 +675,7 @@
       "category": "ボトムス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-61_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -685,7 +686,7 @@
       "category": "シューズ",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-62_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -696,7 +697,7 @@
       "category": "トップス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-63_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -707,7 +708,7 @@
       "category": "ボトムス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-64_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -718,7 +719,7 @@
       "category": "トップス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-65_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -729,7 +730,7 @@
       "category": "ボトムス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-66_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -740,7 +741,7 @@
       "category": "シューズ",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-67_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -751,7 +752,7 @@
       "category": "トップス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-68_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -762,7 +763,7 @@
       "category": "ボトムス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-69_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -773,7 +774,7 @@
       "category": "シューズ",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-70_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -784,7 +785,7 @@
       "category": "トップス",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-71_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -795,7 +796,7 @@
       "category": "ボトムス",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-72_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -806,7 +807,7 @@
       "category": "シューズ",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-73_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -817,7 +818,7 @@
       "category": "アクセサリー",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-74_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -828,7 +829,7 @@
       "category": "トップス",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-75_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -839,7 +840,7 @@
       "category": "ボトムス",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-76_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -850,7 +851,7 @@
       "category": "シューズ",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-77_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -861,7 +862,7 @@
       "category": "アクセサリー",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-78_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -872,7 +873,7 @@
       "category": "トップス",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-79_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -883,7 +884,7 @@
       "category": "ボトムス",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-80_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -894,7 +895,7 @@
       "category": "シューズ",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-81_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -905,7 +906,7 @@
       "category": "アクセサリー",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-82_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -916,7 +917,7 @@
       "category": "トップス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-83_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -927,7 +928,7 @@
       "category": "ボトムス",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-84_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
@@ -938,250 +939,74 @@
       "category": "シューズ",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-85_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629001",
       "metadataSource": "index.html"
     },
     {
-      "code": "EP-001_N",
-      "name": "ピンクステージベスト＆スカート",
-      "brand": "ノーブランド",
-      "type": "キュート",
-      "category": "トップス＆ボトムス",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-001_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-002_PR",
-      "name": "レジェンダリールージュティアラ",
-      "brand": "ノーブランド",
-      "type": "セクシー",
-      "category": "アクセサリー",
-      "rarity": "プレミアムレア",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-002_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-003_N",
-      "name": "エメラルドコクーンワンピ",
-      "brand": "スパイシーアゲハ",
-      "type": "セクシー",
-      "category": "トップス＆ボトムス",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-003_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-004_N",
-      "name": "エメラルドアゲハミュール",
-      "brand": "スパイシーアゲハ",
-      "type": "セクシー",
-      "category": "シューズ",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-004_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-005_N",
-      "name": "ピンクシフォンカチューシャ",
-      "brand": "スパイシーアゲハ",
-      "type": "セクシー",
-      "category": "アクセサリー",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-005_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-006_N",
-      "name": "ピンクリボンつきフリルシャツ",
-      "brand": "エンジェリーシュガー",
-      "type": "キュート",
-      "category": "トップス",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-006_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-007_N",
-      "name": "ピンクアーガイルカーデ",
-      "brand": "エンジェリーシュガー",
-      "type": "キュート",
-      "category": "トップス",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-007_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-008_N",
-      "name": "ピンクプリーツスカート",
-      "brand": "エンジェリーシュガー",
-      "type": "キュート",
-      "category": "ボトムス",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-008_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-009_N",
-      "name": "ガーリーローファー",
-      "brand": "エンジェリーシュガー",
-      "type": "キュート",
-      "category": "シューズ",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-009_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-010_N",
-      "name": "ピンクリボンカチューシャ",
-      "brand": "エンジェリーシュガー",
-      "type": "キュート",
-      "category": "アクセサリー",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-010_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-011_N",
-      "name": "スターライト学園ピンクジャージ",
-      "brand": "ノーブランド",
-      "type": "キュート",
-      "category": "トップス＆ボトムス",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-011_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-012_N",
-      "name": "スターライト学園ブルージャージ",
-      "brand": "ノーブランド",
-      "type": "クール",
-      "category": "トップス＆ボトムス",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-012_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-013_N",
-      "name": "スターライト学園パープルジャージ",
-      "brand": "ノーブランド",
-      "type": "セクシー",
-      "category": "トップス＆ボトムス",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-013_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-014_N",
-      "name": "スターライト学園オレンジジャージ",
-      "brand": "ノーブランド",
-      "type": "ポップ",
-      "category": "トップス＆ボトムス",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-014_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-015_N",
-      "name": "スターライト学園スニーカー",
-      "brand": "ノーブランド",
-      "type": "キュート",
-      "category": "シューズ",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-015_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-016_N",
-      "name": "ブラックダイヤモンドジュエリーワンピ",
-      "brand": "スパイシーアゲハ",
-      "type": "セクシー",
-      "category": "トップス＆ボトムス",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-016_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-017_N",
-      "name": "ピンクの小花柄ワンピ",
-      "brand": "エンジェリーシュガー",
-      "type": "キュート",
-      "category": "トップス＆ボトムス",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-017_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-018_N",
-      "name": "編み上げラベンダーブーツ",
-      "brand": "エンジェリーシュガー",
-      "type": "キュート",
-      "category": "シューズ",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-018_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-029_R",
-      "name": "スターライト学園制服",
-      "brand": "ノーブランド",
-      "type": "キュート",
-      "category": "トップス＆ボトムス",
+      "code": "EP-031_R",
+      "name": "Wi) ae",
+      "brand": "未設定",
+      "type": "なし",
+      "category": "未設定",
       "rarity": "レア",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-029_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-031_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
+      "metadataSource": "OCR"
     },
     {
-      "code": "EP-030_R",
-      "name": "スターライト学園ブーツ",
-      "brand": "ノーブランド",
-      "type": "キュート",
-      "category": "シューズ",
+      "code": "EP-032_R",
+      "name": "yy   ,     ,",
+      "brand": "未設定",
+      "type": "なし",
+      "category": "未設定",
       "rarity": "レア",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-030_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-032_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
+      "metadataSource": "OCR"
     },
     {
-      "code": "EP-037_N",
-      "name": "エンブレムつきセーラーマリントップス＆スカート",
-      "brand": "ノーブランド",
-      "type": "キュート",
-      "category": "トップス＆ボトムス",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-037_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
+      "code": "EP-033_R",
+      "name": "| aT",
+      "brand": "未設定",
+      "type": "なし",
+      "category": "未設定",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-033_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
+      "metadataSource": "OCR"
     },
     {
-      "code": "EP-038_N",
-      "name": "ブルーワークブーツ",
-      "brand": "ノーブランド",
-      "type": "キュート",
-      "category": "シューズ",
-      "rarity": "ノーマル",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-038_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "index.html"
+      "code": "EP-034_R",
+      "name": "(Dm",
+      "brand": "未設定",
+      "type": "なし",
+      "category": "未設定",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-034_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
+      "metadataSource": "OCR"
+    },
+    {
+      "code": "EP-035_R",
+      "name": "ef",
+      "brand": "未設定",
+      "type": "なし",
+      "category": "未設定",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-035_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
+      "metadataSource": "OCR"
+    },
+    {
+      "code": "EP-036_R",
+      "name": "ミー 2",
+      "brand": "未設定",
+      "type": "なし",
+      "category": "未設定",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-036_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
+      "metadataSource": "OCR"
     }
   ]
 }
