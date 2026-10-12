@@ -741,9 +741,10 @@ function mergeAutoCoords(){
     return target;
   }
   for(const item of coords){
-    if(!item.autoCardName){merged.push(item);continue;}
     const slots=["top","bottom","shoes","acc"];
     const linked=slots.map(slot=>({slot,card:cards.find(card=>card.id===item[slot])})).filter(x=>x.card);
+    // 手動作成のコーデでもカードが入っていれば、自動コーデと同様にカード名でまとめ直す
+    if(!item.autoCardName&&!linked.length){merged.push(item);continue;}
     if(!linked.length){
       const raw=String(item.autoCardName).replace(/ファー$/,"").trim();
       const parallel=/__PARALLEL$/.test(raw)||/[（(]\s*パラレル\s*[）)]/.test(raw)||/パラレル/.test(raw);
