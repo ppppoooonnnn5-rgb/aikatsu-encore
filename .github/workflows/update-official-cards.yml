@@ -136,9 +136,31 @@ jobs:
                   codes = code_pattern.findall(html)
 
                   for code in codes:
-
                       cards[code] = {
                           "code": code,
+                          "source": url
+                      }
+
+                  # パラレル版は通常版と同じ番号なので、別IDとして取り込む
+                  parallel_pattern = re.compile(
+                      r'(?:E\\d+-\\d+|EP-\\d+)_(?:PR|ER|R|N)_p(\\d+)\\.webp',
+                      re.IGNORECASE
+                  )
+                  parallel_codes = parallel_pattern.findall(html)
+                  parallel_matches = re.finditer(
+                      r'((?:E\\d+-\\d+|EP-\\d+)_(?:PR|ER|R|N))_p(\\d+)\\.webp',
+                      html,
+                      re.IGNORECASE
+                  )
+                  for match in parallel_matches:
+                      base_code = match.group(1)
+                      parallel_number = match.group(2)
+                      parallel_code = base_code + "_P" + parallel_number
+                      cards[parallel_code] = {
+                          "code": parallel_code,
+                          "baseCode": base_code,
+                          "image": IMAGE_BASE + base_code + "_p" + parallel_number + ".webp",
+                          "parallel": True,
                           "source": url
                       }
 
@@ -146,7 +168,9 @@ jobs:
                       url,
                       "→",
                       len(codes),
-                      "cards"
+                      "normal code mentions,",
+                      len(parallel_codes),
+                      "parallel image mentions"
                   )
 
               except Exception as e:
@@ -435,40 +459,47 @@ jobs:
 
           for code in sorted(cards):
 
+              base_code = cards[code].get("baseCode", code)
+              is_parallel = bool(cards[code].get("parallel"))
+
               # ---------------------------------------------
               # 既存 index.html の正確なデータを最優先
               # ---------------------------------------------
 
-              if code in manual_meta:
+              if base_code in manual_meta:
 
-                  meta = manual_meta[code]
+                  meta = manual_meta[base_code]
 
                   item = {
                       "code": code,
-                      "name": meta["name"],
+                      "name": meta["name"] + ("（パラレル）" if is_parallel else ""),
+                      "set": "第1弾（パラレル）" if is_parallel else "第1弾",
+                      "parallel": is_parallel,
                       "brand": meta["brand"],
                       "type": meta["type"],
                       "category": meta["category"],
                       "rarity": meta["rarity"],
-                      "image": IMAGE_BASE + code + ".webp",
+                      "image": cards[code].get("image", IMAGE_BASE + base_code + ".webp"),
                       "source": cards[code]["source"],
                       "metadataSource": "manual"
                   }
 
                   known_count += 1
 
-              elif code in meta_maps:
+              elif base_code in meta_maps:
 
-                  meta = meta_maps[code]
+                  meta = meta_maps[base_code]
 
                   item = {
                       "code": code,
-                      "name": meta["name"],
+                      "name": meta["name"] + ("（パラレル）" if is_parallel else ""),
+                      "set": "第1弾（パラレル）" if is_parallel else "第1弾",
+                      "parallel": is_parallel,
                       "brand": meta["brand"],
                       "type": meta["type"],
                       "category": meta["category"],
                       "rarity": meta["rarity"],
-                      "image": IMAGE_BASE + code + ".webp",
+                      "image": cards[code].get("image", IMAGE_BASE + base_code + ".webp"),
                       "source": cards[code]["source"],
                       "metadataSource": "index.html"
                   }
@@ -486,8 +517,12 @@ jobs:
                   item["code"] = code
                   item["image"] = (
                       item.get("image")
-                      or IMAGE_BASE + code + ".webp"
+                      or cards[code].get("image")
+                      or IMAGE_BASE + base_code + ".webp"
                   )
+                  if is_parallel:
+                      item["parallel"] = True
+                      item["set"] = "第1弾（パラレル）"
 
                   item["source"] = cards[code]["source"]
 
@@ -504,16 +539,18 @@ jobs:
                       code
                   )
 
-                  ocr = read_new_card(code)
+                  ocr = read_new_card(base_code)
 
                   item = {
                       "code": code,
-                      "name": ocr["name"],
+                      "name": ocr["name"] + ("（パラレル）" if is_parallel else ""),
+                      "set": "第1弾（パラレル）" if is_parallel else "第1弾",
+                      "parallel": is_parallel,
                       "brand": ocr["brand"],
                       "type": ocr["type"],
                       "category": ocr["category"],
                       "rarity": ocr["rarity"],
-                      "image": ocr["image"],
+                      "image": cards[code].get("image", ocr["image"]),
                       "source": cards[code]["source"],
                       "metadataSource": "OCR"
                   }
