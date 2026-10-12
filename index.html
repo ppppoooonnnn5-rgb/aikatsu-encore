@@ -775,6 +775,7 @@ async function syncOfficialCards(){
     if(!Array.isArray(data.cards)) return;
 
     let added=0;
+    let updatedCount=0;
 
     for(const item of data.cards){
       const code=item.code;
@@ -802,6 +803,7 @@ async function syncOfficialCards(){
           };
           await idbPut(updated);
           cards[existingIndex]=updated;
+          updatedCount++;
         }
         continue;
       }
@@ -847,9 +849,9 @@ async function syncOfficialCards(){
       added++;
     }
 
-    if(added>0){
+    if(added>0||updatedCount>0){
       render();
-      console.log("公式カードを自動追加:",added,"枚");
+      console.log("公式カード同期: 追加",added,"枚 / 情報更新",updatedCount,"枚");
     }
   }catch(err){
     console.log("公式カード同期をスキップ:",err);
