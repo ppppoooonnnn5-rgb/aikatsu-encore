@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T06:31:55.637369+00:00",
+  "updatedAt": "2026-10-12T06:39:46.045943+00:00",
   "sources": [
     "https://dcd.aikatsu.com/encore/",
     "https://dcd.aikatsu.com/encore/cardlist/",
@@ -954,58 +954,58 @@
     },
     {
       "code": "EP-032_R",
-      "name": "yy   ,     ,",
-      "brand": "未設定",
-      "type": "なし",
-      "category": "未設定",
+      "name": "ガーリーデビルスカート",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "ボトムス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-032_R.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
-      "metadataSource": "OCR"
+      "metadataSource": "manual"
     },
     {
       "code": "EP-033_R",
-      "name": "| aT",
-      "brand": "未設定",
-      "type": "なし",
-      "category": "未設定",
+      "name": "ガーリーデビルパンプス",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "シューズ",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-033_R.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
-      "metadataSource": "OCR"
+      "metadataSource": "manual"
     },
     {
       "code": "EP-034_R",
-      "name": "(Dm",
-      "brand": "未設定",
-      "type": "なし",
-      "category": "未設定",
+      "name": "モンスターキャットトップス",
+      "brand": "ドリーミークラウン",
+      "type": "クール",
+      "category": "トップス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-034_R.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
-      "metadataSource": "OCR"
+      "metadataSource": "manual"
     },
     {
       "code": "EP-035_R",
-      "name": "ef",
-      "brand": "未設定",
-      "type": "なし",
-      "category": "未設定",
+      "name": "モンスターキャットスカート",
+      "brand": "ドリーミークラウン",
+      "type": "クール",
+      "category": "ボトムス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-035_R.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
-      "metadataSource": "OCR"
+      "metadataSource": "manual"
     },
     {
       "code": "EP-036_R",
-      "name": "ミー 2",
-      "brand": "未設定",
-      "type": "なし",
-      "category": "未設定",
+      "name": "モンスターキャットファーブーツ",
+      "brand": "ドリーミークラウン",
+      "type": "クール",
+      "category": "シューズ",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-036_R.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
-      "metadataSource": "OCR"
+      "metadataSource": "manual"
     }
   ]
 }
