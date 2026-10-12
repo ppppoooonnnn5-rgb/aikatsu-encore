@@ -419,8 +419,12 @@ if(card.code==="EP-003_N"||card.code==="EP-004_N"||card.code==="EP-005_N"){
   return name.replace(/ファー$/,"");
 }
 
+function coordGroupName(card){
+  const base=getCoordBaseName(card).replace(/\s*[（(]パラレル[）)]\s*/g,"").replace(/ファー$/,"").trim();
+  return base+(isParallelCard(card)?"（パラレル）":"");
+}
 function autoCreateCoordForCard(card){
-  const baseName=getCoordBaseName(card);
+  const baseName=coordGroupName(card);
   let coord=coords.find(c=>c.autoCardName===baseName);
 
   if(!coord){
@@ -678,17 +682,35 @@ let coords=JSON.parse(localStorage.getItem("aikatsu-encore-coords-v1")||"[]");
 function mergeAutoCoords(){
   const merged=[];
   const byName=new Map();
+  function ensure(key,template){
+    let target=byName.get(key);
+    if(!target){
+      target={...template,id:merged.includes(template)?Date.now()+Math.random():template.id,name:key+"コーデ",autoCardName:key,top:null,bottom:null,shoes:null,acc:null};
+      byName.set(key,target);
+      merged.push(target);
+    }
+    return target;
+  }
   for(const item of coords){
     if(!item.autoCardName){merged.push(item);continue;}
-    const linkedCard=["top","bottom","shoes","acc"].map(slot=>cards.find(card=>card.id===item[slot])).find(Boolean);
-    const key=linkedCard?getCoordBaseName(linkedCard):String(item.autoCardName).replace(/\s*[（(]パラレル[）)]\s*/g,"").replace(/ファー$/,"").trim();
-    item.autoCardName=key;
-    item.name=key+"コーデ";
-    const existing=byName.get(key);
-    if(!existing){byName.set(key,item);merged.push(item);continue;}
-    for(const slot of ["top","bottom","shoes","acc"]){if(!existing[slot]&&item[slot])existing[slot]=item[slot];}
-    const notes=[existing.memo,item.memo].filter(Boolean);
-    existing.memo=[...new Set(notes)].join(" / ");
+    const slots=["top","bottom","shoes","acc"];
+    const linked=slots.map(slot=>({slot,card:cards.find(card=>card.id===item[slot])})).filter(x=>x.card);
+    if(!linked.length){
+      const raw=String(item.autoCardName).replace(/ファー$/,"").trim();
+      const base=raw.replace(/\s*[（(]パラレル[）)]\s*/g,"").trim();
+      const key=base+(/パラレル/.test(raw)?"（パラレル）":"");
+      const target=ensure(key,item);
+      target.status=item.status||target.status;
+      target.memo=[target.memo,item.memo].filter(Boolean).join(" / ");
+      continue;
+    }
+    for(const {slot,card} of linked){
+      const key=coordGroupName(card);
+      const target=ensure(key,item);
+      if(!target[slot])target[slot]=card.id;
+      if(item.status==="完成")target.status="完成";
+      if(item.memo&&!target.memo)target.memo=item.memo;
+    }
   }
   coords=merged;
   saveCoords();
