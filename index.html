@@ -372,8 +372,8 @@ function changeQty(id,delta){const c=cards.find(x=>x.id===id);if(!c)return;c.qua
 let addTapLock = false;
   function getCoordBaseName(card){
   let name=(card.name||"").replace(/\s*[（(]パラレル[）)]\s*/g,"").trim();
-  // 「プッチからシャイニング」と「プッチガラシャイニング」の表記ゆれを統一
-  name=name.replace(/^プッチからシャイニング/,"プッチガラシャイニング");
+  // 「プッチからシャイニング」と「プッチガラシャイニング」の表記ゆれを統一し、表示名は「プッチがらシャイニング」にする
+  name=name.replace(/^プッチからシャイニング/,"プッチがらシャイニング").replace(/^プッチガラシャイニング/,"プッチがらシャイニング");
   // アイスブルーフリルのトップス・ボトムスもアイスブルーコーデにまとめる
   name=name.replace(/^アイスブルーフリル(?=キャミソール|パニエ)/,"アイスブルー");
   // アイスブルーコーデにジュエルつきパープルリボンもまとめる
