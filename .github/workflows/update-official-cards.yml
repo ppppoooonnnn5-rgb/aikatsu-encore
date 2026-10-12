@@ -87,7 +87,12 @@ jobs:
           # 公式サイトからカードリストURLを発見
           # =========================================================
 
-          urls = {HOME}
+          urls = {
+              HOME,
+              BASE + "/encore/cardlist/?display=1&search=true&series=629001&sort=1",
+              BASE + "/encore/cardlist/?display=2&search=true&series=629001&sort=1",
+              BASE + "/encore/cardlist/?display=3&search=true&series=629001&sort=1"
+          }
 
           try:
               html = session.get(HOME, timeout=30).text
@@ -136,10 +141,48 @@ jobs:
                   codes = code_pattern.findall(html)
 
                   for code in codes:
-                      cards[code] = {
+                      cards.setdefault(code, {
                           "code": code,
                           "source": url
-                      }
+                      })
+
+                  # パラレル表示ページにある別画像URLを探す
+                  parallel_count = 0
+                  for img in soup.select("img"):
+                      image_candidates = [
+                          img.get("src", ""),
+                          img.get("data-src", ""),
+                          img.get("data-original", ""),
+                          img.get("srcset", "")
+                      ]
+                      for image_url in image_candidates:
+                          if not image_url:
+                              continue
+                          image_url = urljoin(url, image_url.split()[0])
+                          code_match = re.search(
+                              r'((?:E\d+-\d+|EP-\d+)_(?:PR|ER|R|N))',
+                              image_url,
+                              re.IGNORECASE
+                          )
+                          if not code_match:
+                              continue
+                          base_code = code_match.group(1)
+                          normal_image = IMAGE_BASE + base_code + ".webp"
+                          if image_url.split("?")[0].rstrip("/") == normal_image:
+                              continue
+                          if "card/" not in image_url:
+                              continue
+                          if any(marker in image_url.lower() for marker in ["parallel", "_p.", "_p_", "-p.", "-p_", "/p/"]):
+                              parallel_code = base_code + "_P"
+                              cards[parallel_code] = {
+                                  "code": parallel_code,
+                                  "baseCode": base_code,
+                                  "image": image_url,
+                                  "parallel": True,
+                                  "source": url
+                              }
+                              parallel_count += 1
+                          break
 
                   # パラレル版は通常版と同じ番号なので、別IDとして取り込む
                   parallel_pattern = re.compile(
