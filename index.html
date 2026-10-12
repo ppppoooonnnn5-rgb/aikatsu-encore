@@ -372,6 +372,8 @@ function changeQty(id,delta){const c=cards.find(x=>x.id===id);if(!c)return;c.qua
 let addTapLock = false;
   function getCoordBaseName(card){
   let name=(card.name||"").replace(/\s*[（(]パラレル[）)]\s*/g,"").trim();
+  // アイスブルーフリルのトップス・ボトムスもアイスブルーコーデにまとめる
+  name=name.replace(/^アイスブルーフリル(?=キャミソール|パニエ)/,"アイスブルー");
 
       if(card.code==="EP-037_N"||card.code==="EP-038_N"){
     return "セーラーマリン";
