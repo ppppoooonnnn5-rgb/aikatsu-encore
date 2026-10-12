@@ -781,18 +781,23 @@ async function syncOfficialCards(){
       if(!code) continue;
 
       // 登録済みカードも、信頼できる公式データがある場合は情報だけ更新
-      const existingIndex=cards.findIndex(c=>c.code===code);
+      const officialImageSuffix="/"+code+".webp";
+      const existingIndex=cards.findIndex(c=>
+        c.code===code ||
+        (typeof c.image==="string" && c.image.split("?")[0].endsWith(officialImageSuffix))
+      );
       if(existingIndex>=0){
         if(item.metadataSource==="manual"||item.metadataSource==="index.html"){
           const existing=cards[existingIndex];
-          const meta=OFFICIAL_CARD_META[code];
+          const meta=OFFICIAL_CARD_META[code]||PROMO_CARD_META[code];
           const updated={
             ...existing,
-            name:item.name||existing.name||meta?.[0]||code,
-            type:item.type||existing.type||meta?.[2]||"なし",
-            brand:item.brand||existing.brand||meta?.[1]||"未設定",
-            category:item.category||existing.category||meta?.[3]||"トップス",
-            rarity:item.rarity||existing.rarity||meta?.[4]||existing.rarity,
+            code:code,
+            name:item.name||meta?.[0]||existing.name||code,
+            type:item.type||meta?.[2]||existing.type||"なし",
+            brand:item.brand||meta?.[1]||existing.brand||"未設定",
+            category:item.category||meta?.[3]||existing.category||"トップス",
+            rarity:item.rarity||meta?.[4]||existing.rarity,
             image:item.image||existing.image||OFFICIAL_CARD_IMAGE_BASE+code+".webp"
           };
           await idbPut(updated);
