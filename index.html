@@ -374,6 +374,8 @@ let addTapLock = false;
   let name=(card.name||"").replace(/\s*[（(]パラレル[）)]\s*/g,"").trim();
   // アイスブルーフリルのトップス・ボトムスもアイスブルーコーデにまとめる
   name=name.replace(/^アイスブルーフリル(?=キャミソール|パニエ)/,"アイスブルー");
+  // ジュエルつきパープルリボンも同じ名前のパープルコーデにまとめる
+  name=name.replace(/^ジュエルつきパープルリボン$/,"ジュエルつきパープル");
 
       if(card.code==="EP-037_N"||card.code==="EP-038_N"){
     return "セーラーマリン";
