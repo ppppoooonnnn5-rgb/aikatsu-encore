@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T06:13:52.235894+00:00",
+  "updatedAt": "2026-10-12T06:31:55.637369+00:00",
   "sources": [
     "https://dcd.aikatsu.com/encore/",
     "https://dcd.aikatsu.com/encore/cardlist/",
@@ -943,14 +943,14 @@
     },
     {
       "code": "EP-031_R",
-      "name": "Wi) ae",
-      "brand": "未設定",
-      "type": "なし",
-      "category": "未設定",
+      "name": "ガーリーデビルトップス",
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "トップス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-031_R.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
-      "metadataSource": "OCR"
+      "metadataSource": "manual"
     },
     {
       "code": "EP-032_R",
