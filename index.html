@@ -412,11 +412,11 @@ if(card.code==="EP-003_N"||card.code==="EP-004_N"||card.code==="EP-005_N"){
   const list=suffixes[card.category]||[];
   for(const suffix of list){
     if(name.endsWith(suffix)){
-      return name.slice(0,-suffix.length);
+      return name.slice(0,-suffix.length).replace(/ファー$/,"");
     }
   }
 
-  return name;
+  return name.replace(/ファー$/,"");
 }
 
 function autoCreateCoordForCard(card){
@@ -675,6 +675,24 @@ toggleQtyInput();
 toggleEditQtyInput();
 
 let coords=JSON.parse(localStorage.getItem("aikatsu-encore-coords-v1")||"[]");
+function mergeAutoCoords(){
+  const merged=[];
+  const byName=new Map();
+  for(const item of coords){
+    if(!item.autoCardName){merged.push(item);continue;}
+    const key=String(item.autoCardName).replace(/ファー$/,"");
+    item.autoCardName=key;
+    item.name=key+"コーデ";
+    const existing=byName.get(key);
+    if(!existing){byName.set(key,item);merged.push(item);continue;}
+    for(const slot of ["top","bottom","shoes","acc"]){if(!existing[slot]&&item[slot])existing[slot]=item[slot];}
+    const notes=[existing.memo,item.memo].filter(Boolean);
+    existing.memo=[...new Set(notes)].join(" / ");
+  }
+  coords=merged;
+  saveCoords();
+}
+mergeAutoCoords();
 let currentView="cards";
 function isParallelCard(c){return !!(c && (c.parallel===true || /_P\d*$/i.test(String(c.code||"")) || /（パラレル）/.test(String(c.name||""))));}
 function saveCoords(){localStorage.setItem("aikatsu-encore-coords-v1",JSON.stringify(coords))}
