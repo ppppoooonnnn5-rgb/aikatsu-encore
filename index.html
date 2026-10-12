@@ -685,7 +685,7 @@ function mergeAutoCoords(){
   function ensure(key,template){
     let target=byName.get(key);
     if(!target){
-      target={...template,id:merged.includes(template)?Date.now()+Math.random():template.id,name:key+"コーデ",autoCardName:key,top:null,bottom:null,shoes:null,acc:null};
+      target={...template,id:merged.some(entry=>entry.id===template.id)?Date.now()+Math.random():template.id,name:key+"コーデ",autoCardName:key,top:null,bottom:null,shoes:null,acc:null};
       byName.set(key,target);
       merged.push(target);
     }
