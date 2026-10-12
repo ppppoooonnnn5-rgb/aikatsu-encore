@@ -693,7 +693,6 @@ function mergeAutoCoords(){
   coords=merged;
   saveCoords();
 }
-mergeAutoCoords();
 let currentView="cards";
 function isParallelCard(c){return !!(c && (c.parallel===true || /_P\d*$/i.test(String(c.code||"")) || /（パラレル）/.test(String(c.name||""))));}
 function saveCoords(){localStorage.setItem("aikatsu-encore-coords-v1",JSON.stringify(coords))}
@@ -900,7 +899,7 @@ if(addBtn){
   addBtn.addEventListener("pointerup", (e)=>{ if(e.pointerType==="touch") addCard(e); }, {capture:true});
   addBtn.addEventListener("touchend", (e)=>{ addCard(e); }, {capture:true, passive:false});
 }
-initStorage().then(()=>syncOfficialCards());
+initStorage().then(async()=>{await syncOfficialCards();mergeAutoCoords();renderCoords();});
 </script>
 <script>
 if ("serviceWorker" in navigator) {
