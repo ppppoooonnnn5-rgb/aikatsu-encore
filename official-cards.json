@@ -1,8 +1,11 @@
 {
-  "updatedAt": "2026-10-12T06:53:09.938837+00:00",
+  "updatedAt": "2026-10-12T06:55:11.430916+00:00",
   "sources": [
     "https://dcd.aikatsu.com/encore/",
     "https://dcd.aikatsu.com/encore/cardlist/",
+    "https://dcd.aikatsu.com/encore/cardlist/?display=1&search=true&series=629001&sort=1",
+    "https://dcd.aikatsu.com/encore/cardlist/?display=2&search=true&series=629001&sort=1",
+    "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
     "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R"
   ],
   "cards": [
@@ -20,6 +23,19 @@
       "metadataSource": "index.html"
     },
     {
+      "code": "E1-01_PR_P1",
+      "name": "オーロラキスキャミソール（パラレル）",
+      "set": "第1弾（パラレル）",
+      "parallel": true,
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "トップス",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-01_PR_p1.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
+      "metadataSource": "index.html"
+    },
+    {
       "code": "E1-02_PR",
       "name": "オーロラキスドレープスカート",
       "set": "第1弾",
@@ -30,6 +46,19 @@
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-02_PR.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
+    },
+    {
+      "code": "E1-02_PR_P1",
+      "name": "オーロラキスドレープスカート（パラレル）",
+      "set": "第1弾（パラレル）",
+      "parallel": true,
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "ボトムス",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-02_PR_p1.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
       "metadataSource": "index.html"
     },
     {
@@ -46,6 +75,19 @@
       "metadataSource": "index.html"
     },
     {
+      "code": "E1-03_PR_P1",
+      "name": "オーロラキスバレエシューズ（パラレル）",
+      "set": "第1弾（パラレル）",
+      "parallel": true,
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "シューズ",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-03_PR_p1.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
+      "metadataSource": "index.html"
+    },
+    {
       "code": "E1-04_PR",
       "name": "オーロラキスリボン",
       "set": "第1弾",
@@ -56,6 +98,19 @@
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-04_PR.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
+    },
+    {
+      "code": "E1-04_PR_P1",
+      "name": "オーロラキスリボン（パラレル）",
+      "set": "第1弾（パラレル）",
+      "parallel": true,
+      "brand": "エンジェリーシュガー",
+      "type": "キュート",
+      "category": "アクセサリー",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-04_PR_p1.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
       "metadataSource": "index.html"
     },
     {
@@ -397,6 +452,19 @@
       "metadataSource": "index.html"
     },
     {
+      "code": "E1-30_ER_P1",
+      "name": "オデットスワン（パラレル）",
+      "set": "第1弾（パラレル）",
+      "parallel": true,
+      "brand": "ドリーミークラウン",
+      "type": "キュート",
+      "category": "フルコーデ",
+      "rarity": "アンコールレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-30_ER_p1.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
+      "metadataSource": "index.html"
+    },
+    {
       "code": "E1-31_ER",
       "name": "リルリボンストーリー",
       "set": "第1弾",
@@ -407,6 +475,19 @@
       "rarity": "アンコールレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-31_ER.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
+    },
+    {
+      "code": "E1-31_ER_P1",
+      "name": "リルリボンストーリー（パラレル）",
+      "set": "第1弾（パラレル）",
+      "parallel": true,
+      "brand": "メープルリボン",
+      "type": "キュート",
+      "category": "フルコーデ",
+      "rarity": "アンコールレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-31_ER_p1.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
       "metadataSource": "index.html"
     },
     {
@@ -423,6 +504,19 @@
       "metadataSource": "index.html"
     },
     {
+      "code": "E1-32_ER_P1",
+      "name": "オーロラペガサス（パラレル）",
+      "set": "第1弾（パラレル）",
+      "parallel": true,
+      "brand": "ノーブランド",
+      "type": "キュート",
+      "category": "フルコーデ",
+      "rarity": "アンコールレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-32_ER_p1.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
+      "metadataSource": "index.html"
+    },
+    {
       "code": "E1-33_PR",
       "name": "天の川コズミックワンショルダー",
       "set": "第1弾",
@@ -433,6 +527,19 @@
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-33_PR.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
+    },
+    {
+      "code": "E1-33_PR_P1",
+      "name": "天の川コズミックワンショルダー（パラレル）",
+      "set": "第1弾（パラレル）",
+      "parallel": true,
+      "brand": "フューチャリングガール",
+      "type": "クール",
+      "category": "トップス",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-33_PR_p1.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
       "metadataSource": "index.html"
     },
     {
@@ -449,6 +556,19 @@
       "metadataSource": "index.html"
     },
     {
+      "code": "E1-34_PR_P1",
+      "name": "天の川コズミックスカート（パラレル）",
+      "set": "第1弾（パラレル）",
+      "parallel": true,
+      "brand": "フューチャリングガール",
+      "type": "クール",
+      "category": "ボトムス",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-34_PR_p1.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
+      "metadataSource": "index.html"
+    },
+    {
       "code": "E1-35_PR",
       "name": "天の川コズミックブーツ",
       "set": "第1弾",
@@ -462,6 +582,19 @@
       "metadataSource": "index.html"
     },
     {
+      "code": "E1-35_PR_P1",
+      "name": "天の川コズミックブーツ（パラレル）",
+      "set": "第1弾（パラレル）",
+      "parallel": true,
+      "brand": "フューチャリングガール",
+      "type": "クール",
+      "category": "シューズ",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-35_PR_p1.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
+      "metadataSource": "index.html"
+    },
+    {
       "code": "E1-36_PR",
       "name": "天の川コズミックカチューシャ",
       "set": "第1弾",
@@ -472,6 +605,19 @@
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-36_PR.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
+    },
+    {
+      "code": "E1-36_PR_P1",
+      "name": "天の川コズミックカチューシャ（パラレル）",
+      "set": "第1弾（パラレル）",
+      "parallel": true,
+      "brand": "フューチャリングガール",
+      "type": "クール",
+      "category": "アクセサリー",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-36_PR_p1.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
       "metadataSource": "index.html"
     },
     {
@@ -654,6 +800,19 @@
       "rarity": "アンコールレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-50_ER.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/",
+      "metadataSource": "index.html"
+    },
+    {
+      "code": "E1-50_ER_P1",
+      "name": "ドリームエミネンス（パラレル）",
+      "set": "第1弾（パラレル）",
+      "parallel": true,
+      "brand": "ノーブランド",
+      "type": "クール",
+      "category": "フルコーデ",
+      "rarity": "アンコールレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-50_ER_p1.webp",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
       "metadataSource": "index.html"
     },
     {
@@ -1121,7 +1280,7 @@
       "category": "トップス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-031_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
+      "source": "https://dcd.aikatsu.com/encore/",
       "metadataSource": "manual"
     },
     {
@@ -1134,7 +1293,7 @@
       "category": "ボトムス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-032_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
+      "source": "https://dcd.aikatsu.com/encore/",
       "metadataSource": "manual"
     },
     {
@@ -1147,7 +1306,7 @@
       "category": "シューズ",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-033_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
+      "source": "https://dcd.aikatsu.com/encore/",
       "metadataSource": "manual"
     },
     {
@@ -1160,7 +1319,7 @@
       "category": "トップス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-034_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
+      "source": "https://dcd.aikatsu.com/encore/",
       "metadataSource": "manual"
     },
     {
@@ -1173,7 +1332,7 @@
       "category": "ボトムス",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-035_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
+      "source": "https://dcd.aikatsu.com/encore/",
       "metadataSource": "manual"
     },
     {
@@ -1186,7 +1345,7 @@
       "category": "シューズ",
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-036_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R",
+      "source": "https://dcd.aikatsu.com/encore/",
       "metadataSource": "manual"
     }
   ]
