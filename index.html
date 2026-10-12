@@ -33,7 +33,7 @@ dialog{border:0;border-radius:20px;width:min(560px,92vw);padding:0;box-shadow:0 
 <div class="top"><div class="logo">Aikatsu <span>Encore</span> Card Manager <small style="font-size:10px;opacity:.55">v17</small></div><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end"><button onclick="backupDlg.showModal()">⬇️ バックアップ</button><button onclick="openRestore()">⬆️ 復元</button><button class="primary" onclick="openAdd()">＋ カード追加</button><button onclick="openOfficialImport()">🌟 公式1弾を一括登録</button><button class="primary" onclick="applyOfficialMetadata()">✨ 公式データを反映</button><button onclick="createCoordsForExistingCards()">🧩 既存カードをコーデ化</button></div></div>
 <div class="search"><input id="q" placeholder="カード名・ブランド・弾数などで検索…" oninput="render()"><button onclick="resetFilters()">リセット</button></div>
 <div style="margin-top:8px;font-size:11px;color:var(--muted)">保存版 v5</div><div id="storageStatus" style="margin-top:8px;font-size:12px;color:var(--muted)">💾 保存方式を準備中…</div>
-<div style="display:flex;gap:8px;margin-top:12px"><button id="cardsTab" class="primary" onclick="showView('cards')">カード一覧</button><button id="coordsTab" onclick="showView('coords')">コーデ一覧</button><button onclick="toggleHeader()">⌃ 縮める</button></div>
+<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button id="cardsTab" class="primary" onclick="showView('cards')">カード一覧</button><button id="parallelTab" onclick="showView('parallel')">パラレル一覧</button><button id="coordsTab" onclick="showView('coords')">コーデ一覧</button><button onclick="toggleHeader()">⌃ 縮める</button></div>
 </div></header>
 <main class="wrap">
 <div class="stats"><div class="stat">登録 <b id="count">0</b> 枚</div><div class="stat">表示 <b id="shown">0</b> 枚</div></div>
@@ -48,6 +48,8 @@ dialog{border:0;border-radius:20px;width:min(560px,92vw);padding:0;box-shadow:0 
 <div id="grid" class="grid"></div>
 </main>
 
+
+<section id="parallelView" class="wrap" style="display:none;padding:20px 16px 50px"><div class="top" style="margin-bottom:15px"><div><h2 style="margin:0">パラレル一覧</h2><div style="color:var(--muted);font-size:13px">パラレルカードだけをまとめて表示します。</div></div><div class="stat">パラレル <b id="parallelCount">0</b> 枚</div></div><div id="parallelMount"></div></section>
 
 <section id="coordsView" class="wrap" style="display:none">
   <div class="top" style="margin-bottom:15px">
@@ -659,6 +661,8 @@ function render(){
 const q=$("q").value.toLowerCase(); const vals={set:$("set").value,promo:$("promo").value,type:$("type").value,brand:$("brand").value,rarity:$("rarity").value,status:$("status").value};
 cards.forEach(c=>{if(!c.status)c.status="持ってる";if(!c.quantity)c.quantity=1});
 let list=cards.filter(c=>(!q||Object.values(c).join(" ").toLowerCase().includes(q))&&Object.entries(vals).every(([k,v])=>!v||c[k]===v));
+list=list.filter(c=>currentView==="parallel"?isParallelCard(c):!isParallelCard(c));
+const pg=$("parallelCount"); if(pg) pg.textContent=cards.filter(isParallelCard).length;
 $("count").textContent=cards.length;$("shown").textContent=list.length;
 const sets=[...new Set(cards.map(c=>c.set))].sort(), brands=[...new Set(cards.map(c=>c.brand))].sort();
 $("set").innerHTML='<option value="">弾数：すべて</option>'+sets.map(x=>`<option ${x===vals.set?'selected':''}>${esc(x)}</option>`).join("");
@@ -671,16 +675,25 @@ toggleQtyInput();
 toggleEditQtyInput();
 
 let coords=JSON.parse(localStorage.getItem("aikatsu-encore-coords-v1")||"[]");
+let currentView="cards";
+function isParallelCard(c){return !!(c && (c.parallel===true || /_P\d*$/i.test(String(c.code||"")) || /（パラレル）/.test(String(c.name||""))));}
 function saveCoords(){localStorage.setItem("aikatsu-encore-coords-v1",JSON.stringify(coords))}
 function toggleHeader(){
   document.querySelector("header").classList.toggle("compact");
 }
   function showView(view){
+  currentView=view;
+  const grid=$("grid");
+  if(view==="parallel") $("parallelMount").appendChild(grid);
+  else if(grid.parentElement!==document.querySelector("main")) document.querySelector("main").appendChild(grid);
   $("coordsView").style.display=view==="coords"?"block":"none";
+  $("parallelView").style.display=view==="parallel"?"block":"none";
   document.querySelector("main").style.display=view==="cards"?"block":"none";
   $("cardsTab").className=view==="cards"?"primary":"";
+  $("parallelTab").className=view==="parallel"?"primary":"";
   $("coordsTab").className=view==="coords"?"primary":"";
   if(view==="coords") renderCoords();
+  render();
 }
 function cardOptions(){
   const opts=cards.map(c=>`<option value="${c.id}">${esc(c.name)} — ${esc(c.set)} / ${esc(c.brand)}</option>`).join("");
@@ -795,6 +808,8 @@ async function syncOfficialCards(){
             ...existing,
             code:code,
             name:item.name||meta?.[0]||existing.name||code,
+            parallel:!!item.parallel || isParallelCard(existing),
+            set:item.set||existing.set,
             type:item.type||meta?.[2]||existing.type||"なし",
             brand:item.brand||meta?.[1]||existing.brand||"未設定",
             category:item.category||meta?.[3]||existing.category||"トップス",
@@ -832,6 +847,7 @@ async function syncOfficialCards(){
         id:Date.now()+Math.random(),
         code:code,
         name:item.name||jsonMeta?.name||meta?.[0]||code,
+        parallel:!!item.parallel,
         set:item.set||setName,
         promo:item.promo||(isPromo?"プロモ":"通常"),
         type:item.type||jsonMeta?.type||meta?.[2]||"なし",
