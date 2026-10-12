@@ -42,7 +42,7 @@ dialog{border:0;border-radius:20px;width:min(560px,92vw);padding:0;box-shadow:0 
 <select id="promo" onchange="render()"><option value="">区分：すべて</option><option>通常</option><option>プロモ</option></select>
 <select id="type" onchange="render()"><option value="">タイプ：すべて</option><option>キュート</option><option>クール</option><option>セクシー</option><option>ポップ</option><option>なし</option></select>
 <select id="brand" onchange="render()"><option value="">ブランド：すべて</option></select>
-<select id="rarity" onchange="render()"><option value="">レア度：すべて</option><option>ノーマル</option><option>レア</option><option>プレミアムレア</option><option>プレミアム</option><option>アンコールレア</option><option>その他</option></select>
+<select id="rarity" onchange="render()"><option value="">レア度：すべて</option><option>ノーマル</option><option>レア</option><option>プレミアムレア</option><option>アンコールレア</option><option>その他</option></select>
 <select id="status" onchange="render()"><option value="">所持状況：すべて</option><option>持ってる</option><option>欲しい</option><option>ダブり</option></select>
 </div>
 <div id="grid" class="grid"></div>
@@ -117,7 +117,7 @@ dialog{border:0;border-radius:20px;width:min(560px,92vw);padding:0;box-shadow:0 
 <div class="row"><div><label>弾数</label><input id="editSet" placeholder="例：第1弾"></div><div><label>区分</label><select id="editPromo"><option>通常</option><option>プロモ</option></select></div></div>
 <div class="row"><div><label>タイプ</label><select id="editType"><option>キュート</option><option>クール</option><option>セクシー</option><option>ポップ</option><option>なし</option></select></div><div><label>ブランド</label><input id="editBrand" placeholder="例：Angely Sugar"></div></div>
 <label>カテゴリ</label><select id="editCategory"><option>トップス</option><option>ボトムス</option><option>シューズ</option><option>トップス＆ボトムス</option><option>フルコーデ</option><option>アクセサリー</option></select>
-<label>レア度</label><select id="editRarity"><option>ノーマル</option><option>レア</option><option>プレミアムレア</option><option>プレミアム</option><option>アンコールレア</option><option>その他</option></select>
+<label>レア度</label><select id="editRarity"><option>ノーマル</option><option>レア</option><option>プレミアムレア</option><option>アンコールレア</option><option>その他</option></select>
 <label>所持状況</label><select id="editStatus" onchange="toggleEditQtyInput()"><option>持ってる</option><option>欲しい</option><option>ダブり</option></select>
 <div id="editQtyInputWrap"><label>ダブり枚数</label><input id="editQty" type="number" min="1" value="1"></div>
 <div class="actions"><button type="button" onclick="editDlg.close()">キャンセル</button><button class="primary">保存する</button></div>
@@ -132,7 +132,7 @@ dialog{border:0;border-radius:20px;width:min(560px,92vw);padding:0;box-shadow:0 
 <div class="row"><div><label>弾数</label><input id="setInput" placeholder="例：第1弾"></div><div><label>区分</label><select id="promoInput"><option>通常</option><option>プロモ</option></select></div></div>
 <div class="row"><div><label>タイプ</label><select id="typeInput"><option>キュート</option><option>クール</option><option>セクシー</option><option>ポップ</option><option>なし</option></select></div><div><label>ブランド</label><input id="brandInput" placeholder="例：Angely Sugar"></div></div>
 <label>カテゴリ</label><select id="categoryInput"><option>トップス</option><option>ボトムス</option><option>シューズ</option><option>トップス＆ボトムス</option><option>フルコーデ</option><option>アクセサリー</option></select>
-<label>レア度</label><select id="rarityInput"><option>ノーマル</option><option>レア</option><option>プレミアムレア</option><option>プレミアム</option><option>アンコールレア</option><option>その他</option></select>
+<label>レア度</label><select id="rarityInput"><option>ノーマル</option><option>レア</option><option>プレミアムレア</option><option>アンコールレア</option><option>その他</option></select>
 <label>所持状況</label><select id="statusInput" onchange="toggleQtyInput()"><option>持ってる</option><option>欲しい</option><option>ダブり</option></select>
 <div id="qtyInputWrap"><label>ダブり枚数</label><input id="qtyInput" type="number" min="1" value="1"></div>
 <div class="actions"><button type="button" onclick="dlg.close()">キャンセル</button><button type="button" class="primary" id="addCardBtn">登録する</button></div>
@@ -145,7 +145,7 @@ dialog{border:0;border-radius:20px;width:min(560px,92vw);padding:0;box-shadow:0 
 <div class="drop" style="margin-top:8px"><input id="bulkFolder" type="file" accept="image/*" webkitdirectory directory><div style="font-size:11px;color:var(--muted);margin-top:5px">フォルダを選択（PC向け）</div></div>
 <div class="row" style="margin-top:10px"><div><label>一括登録時の弾数</label><input id="bulkSet" placeholder="例：第1弾"></div><div><label>区分</label><select id="bulkPromo"><option>通常</option><option>プロモ</option></select></div></div>
 <div class="row"><div><label>タイプ</label><select id="bulkType"><option>キュート</option><option>クール</option><option>セクシー</option><option>ポップ</option><option>なし</option></select></div><div><label>ブランド</label><input id="bulkBrand" placeholder="例：Angely Sugar"></div></div>
-<div class="row"><div><label>レア度</label><select id="bulkRarity"><option>ノーマル</option><option>レア</option><option>プレミアムレア</option><option>プレミアム</option><option>その他</option></select></div><div><label>所持状況</label><select id="bulkStatus"><option>持ってる</option><option>欲しい</option><option>ダブり</option></select></div></div>
+<div class="row"><div><label>レア度</label><select id="bulkRarity"><option>ノーマル</option><option>レア</option><option>プレミアムレア</option><option>その他</option></select></div><div><label>所持状況</label><select id="bulkStatus"><option>持ってる</option><option>欲しい</option><option>ダブり</option></select></div></div>
 <div id="bulkProgress" style="display:none;margin-top:12px;padding:10px;border-radius:12px;background:#faf5f9;font-size:13px"></div>
 <div class="actions"><button type="button" class="primary" onclick="bulkImport()">選択した画像を一括登録</button></div>
 </div></dialog>
@@ -721,7 +721,7 @@ function typeIcon(type){
  return ({キュート:"💗",クール:"💙",セクシー:"💜",ポップ:"💛",なし:"⚪"})[type]||"✨";
 }
 function rarityIcon(rarity){
- return ({ノーマル:"☆",レア:"★",プレミアムレア:"👑",プレミアム:"👑",その他:"✦",アンコールレア:"ER"})[rarity]||"✦";
+ return ({ノーマル:"☆",レア:"★",プレミアムレア:"👑",その他:"✦",アンコールレア:"ER"})[rarity]||"✦";
 }
 function cardMeta(c){
  return `<div class="card-meta">${c.code?`<span class="meta-icon">🔖 ${esc(c.code)}</span>`:""}<span class="meta-icon"><span class="ico">${brandIcon(c.brand)}</span>${esc(c.brand)}</span><span class="meta-icon"><span class="ico">${typeIcon(c.type)}</span>${esc(c.type)}</span><span class="meta-icon">📁 ${esc(c.category||"未設定")}</span><span class="meta-icon"><span class="ico">${rarityIcon(c.rarity)}</span>${esc(c.rarity)}</span></div>`;
