@@ -333,21 +333,37 @@ jobs:
 
                       lines.append(line)
 
-                  # カード名候補
-                  if lines:
+                                    # カード名：日本語の候補を優先
+                  candidates = []
+                  seen = set()
 
-                      # 最初の比較的短い日本語行を採用
-                      candidates = sorted(
-                          lines,
-                          key=lambda x: (
-                              len(x) > 40,
-                              len(x)
-                          )
+                  for raw_line in lines:
+                      line = raw_line.strip()
+                      if not line or line in seen:
+                          continue
+                      seen.add(line)
+
+                      if code in line or len(line) > 35:
+                          continue
+                      if any(label in line for label in brands + categories):
+                          continue
+
+                      japanese_chars = len(
+                          re.findall(r"[ぁ-んァ-ヶ一-龠]", line)
                       )
 
-                      if candidates:
+                      if japanese_chars < 3:
+                          continue
 
-                          result["name"] = candidates[0]
+                      noise = len(
+                          re.findall(r"[^ぁ-んァ-ヶ一-龠ー・\s]", line)
+                      )
+                      score = japanese_chars * 3 - noise
+                      candidates.append((score, line))
+
+                  if candidates:
+                      candidates.sort(reverse=True)
+                      result["name"] = candidates[0][1]
 
                   return result
 
