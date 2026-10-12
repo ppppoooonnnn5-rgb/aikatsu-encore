@@ -143,12 +143,12 @@ jobs:
 
                   # パラレル版は通常版と同じ番号なので、別IDとして取り込む
                   parallel_pattern = re.compile(
-                      r'(?:E\\d+-\\d+|EP-\\d+)_(?:PR|ER|R|N)_p(\\d+)\\.webp',
+                      r'(?:E\d+-\d+|EP-\d+)_(?:PR|ER|R|N)_p(\d+)\.webp',
                       re.IGNORECASE
                   )
                   parallel_codes = parallel_pattern.findall(html)
                   parallel_matches = re.finditer(
-                      r'((?:E\\d+-\\d+|EP-\\d+)_(?:PR|ER|R|N))_p(\\d+)\\.webp',
+                      r'((?:E\d+-\d+|EP-\d+)_(?:PR|ER|R|N))_p(\d+)\.webp',
                       html,
                       re.IGNORECASE
                   )
