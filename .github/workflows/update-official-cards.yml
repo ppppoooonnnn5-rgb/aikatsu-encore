@@ -209,6 +209,17 @@ jobs:
               "アクセサリー"
           ]
 
+          # OCRでは誤認識されやすいカードは正しい情報を手動で補正
+          manual_meta = {
+              "EP-031_R": {
+                  "name": "ガーリーデビルトップス",
+                  "brand": "エンジェリーシュガー",
+                  "type": "キュート",
+                  "category": "トップス",
+                  "rarity": "レア"
+              }
+          }
+
           def rarity_from_code(code):
 
               if code.endswith("_PR"):
@@ -393,7 +404,25 @@ jobs:
               # 既存 index.html の正確なデータを最優先
               # ---------------------------------------------
 
-              if code in meta_maps:
+              if code in manual_meta:
+
+                  meta = manual_meta[code]
+
+                  item = {
+                      "code": code,
+                      "name": meta["name"],
+                      "brand": meta["brand"],
+                      "type": meta["type"],
+                      "category": meta["category"],
+                      "rarity": meta["rarity"],
+                      "image": IMAGE_BASE + code + ".webp",
+                      "source": cards[code]["source"],
+                      "metadataSource": "manual"
+                  }
+
+                  known_count += 1
+
+              elif code in meta_maps:
 
                   meta = meta_maps[code]
 
