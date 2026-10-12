@@ -680,7 +680,8 @@ function mergeAutoCoords(){
   const byName=new Map();
   for(const item of coords){
     if(!item.autoCardName){merged.push(item);continue;}
-    const key=String(item.autoCardName).replace(/\s*[（(]パラレル[）)]\s*/g,"").replace(/ファー$/,"").trim();
+    const linkedCard=["top","bottom","shoes","acc"].map(slot=>cards.find(card=>card.id===item[slot])).find(Boolean);
+    const key=linkedCard?getCoordBaseName(linkedCard):String(item.autoCardName).replace(/\s*[（(]パラレル[）)]\s*/g,"").replace(/ファー$/,"").trim();
     item.autoCardName=key;
     item.name=key+"コーデ";
     const existing=byName.get(key);
