@@ -419,25 +419,37 @@ if(card.code==="EP-003_N"||card.code==="EP-004_N"||card.code==="EP-005_N"){
   return name.replace(/ファー$/,"");
 }
 
-function coordGroupName(card){
+function isParallelCard(c){
+  if(!c)return false;
+  return c.parallel===true ||
+    /_P\d*$/i.test(String(c.code||"")) ||
+    /[（(]\s*パラレル\s*[）)]/.test(String(c.name||"")) ||
+    /パラレル/.test(String(c.set||""));
+}
+function coordGroupKey(card){
   const base=getCoordBaseName(card).replace(/\s*[（(]パラレル[）)]\s*/g,"").replace(/ファー$/,"").trim();
-  return base+(isParallelCard(card)?"（パラレル）":"");
+  return base+(isParallelCard(card)?"__PARALLEL":"");
+}
+function coordDisplayName(key){
+  const parallel=String(key).endsWith("__PARALLEL");
+  const base=parallel?String(key).slice(0,-10):String(key);
+  return base+"コーデ"+(parallel?"（パラレル）":"");
 }
 function autoCreateCoordForCard(card){
-  const baseName=coordGroupName(card);
-  let coord=coords.find(c=>c.autoCardName===baseName);
+  const key=coordGroupKey(card);
+  let coord=coords.find(c=>c.autoCardName===key);
 
   if(!coord){
     coord={
       id:Date.now()+Math.random(),
-      name:baseName+"コーデ",
+      name:coordDisplayName(key),
       top:null,
       bottom:null,
       shoes:null,
       acc:null,
       status:"未完成",
       memo:"",
-      autoCardName:baseName
+      autoCardName:key
     };
     coords.unshift(coord);
   }
@@ -681,12 +693,12 @@ toggleEditQtyInput();
 let coords=JSON.parse(localStorage.getItem("aikatsu-encore-coords-v1")||"[]");
 function mergeAutoCoords(){
   const merged=[];
-  const byName=new Map();
+  const byKey=new Map();
   function ensure(key,template){
-    let target=byName.get(key);
+    let target=byKey.get(key);
     if(!target){
-      target={...template,id:merged.some(entry=>entry.id===template.id)?Date.now()+Math.random():template.id,name:key+"コーデ",autoCardName:key,top:null,bottom:null,shoes:null,acc:null};
-      byName.set(key,target);
+      target={...template,id:merged.some(entry=>entry.id===template.id)?Date.now()+Math.random():template.id,name:coordDisplayName(key),autoCardName:key,top:null,bottom:null,shoes:null,acc:null};
+      byKey.set(key,target);
       merged.push(target);
     }
     return target;
@@ -697,15 +709,16 @@ function mergeAutoCoords(){
     const linked=slots.map(slot=>({slot,card:cards.find(card=>card.id===item[slot])})).filter(x=>x.card);
     if(!linked.length){
       const raw=String(item.autoCardName).replace(/ファー$/,"").trim();
-      const base=raw.replace(/\s*[（(]パラレル[）)]\s*/g,"").trim();
-      const key=base+(/パラレル/.test(raw)?"（パラレル）":"");
+      const parallel=/__PARALLEL$/.test(raw)||/[（(]\s*パラレル\s*[）)]/.test(raw)||/パラレル/.test(raw);
+      const base=raw.replace(/__PARALLEL$/,"").replace(/\s*[（(]パラレル[）)]\s*/g,"").trim();
+      const key=base+(parallel?"__PARALLEL":"");
       const target=ensure(key,item);
       target.status=item.status||target.status;
       target.memo=[target.memo,item.memo].filter(Boolean).join(" / ");
       continue;
     }
     for(const {slot,card} of linked){
-      const key=coordGroupName(card);
+      const key=coordGroupKey(card);
       const target=ensure(key,item);
       if(!target[slot])target[slot]=card.id;
       if(item.status==="完成")target.status="完成";
@@ -716,7 +729,7 @@ function mergeAutoCoords(){
   saveCoords();
 }
 let currentView="cards";
-function isParallelCard(c){return !!(c && (c.parallel===true || /_P\d*$/i.test(String(c.code||"")) || /（パラレル）/.test(String(c.name||""))));}
+
 function saveCoords(){localStorage.setItem("aikatsu-encore-coords-v1",JSON.stringify(coords))}
 function toggleHeader(){
   document.querySelector("header").classList.toggle("compact");
