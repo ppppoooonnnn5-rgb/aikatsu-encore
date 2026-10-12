@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T06:44:05.056993+00:00",
+  "updatedAt": "2026-10-12T06:48:17.998759+00:00",
   "sources": [
     "https://dcd.aikatsu.com/encore/",
     "https://dcd.aikatsu.com/encore/cardlist/",
@@ -9,6 +9,8 @@
     {
       "code": "E1-01_PR",
       "name": "オーロラキスキャミソール",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "トップス",
@@ -20,6 +22,8 @@
     {
       "code": "E1-02_PR",
       "name": "オーロラキスドレープスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "ボトムス",
@@ -31,6 +35,8 @@
     {
       "code": "E1-03_PR",
       "name": "オーロラキスバレエシューズ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "シューズ",
@@ -42,6 +48,8 @@
     {
       "code": "E1-04_PR",
       "name": "オーロラキスリボン",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "アクセサリー",
@@ -53,6 +61,8 @@
     {
       "code": "E1-05_R",
       "name": "アイスブルーフリルキャミソール",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "トップス",
@@ -64,6 +74,8 @@
     {
       "code": "E1-06_R",
       "name": "アイスブルーフリルパニエ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "ボトムス",
@@ -75,6 +87,8 @@
     {
       "code": "E1-07_R",
       "name": "アイスブルーシューズ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "シューズ",
@@ -86,6 +100,8 @@
     {
       "code": "E1-08_R",
       "name": "ジュエルつきパープルリボン",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "アクセサリー",
@@ -97,6 +113,8 @@
     {
       "code": "E1-09_R",
       "name": "小花柄イエローワンピ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "トップス＆ボトムス",
@@ -108,6 +126,8 @@
     {
       "code": "E1-10_R",
       "name": "ドリーミースタートップス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ドリーミークラウン",
       "type": "キュート",
       "category": "トップス",
@@ -119,6 +139,8 @@
     {
       "code": "E1-11_R",
       "name": "ドリーミースタースカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ドリーミークラウン",
       "type": "キュート",
       "category": "ボトムス",
@@ -130,6 +152,8 @@
     {
       "code": "E1-12_R",
       "name": "ドリーミースターパンプス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ドリーミークラウン",
       "type": "キュート",
       "category": "シューズ",
@@ -141,6 +165,8 @@
     {
       "code": "E1-13_R",
       "name": "チャーミーリボントップス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "メープルリボン",
       "type": "キュート",
       "category": "トップス",
@@ -152,6 +178,8 @@
     {
       "code": "E1-14_R",
       "name": "チャーミーリボンスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "メープルリボン",
       "type": "キュート",
       "category": "ボトムス",
@@ -163,6 +191,8 @@
     {
       "code": "E1-15_R",
       "name": "チャーミーリボンサンダル",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "メープルリボン",
       "type": "キュート",
       "category": "シューズ",
@@ -174,6 +204,8 @@
     {
       "code": "E1-16_R",
       "name": "チャーミーリボンアクセ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "メープルリボン",
       "type": "キュート",
       "category": "アクセサリー",
@@ -185,6 +217,8 @@
     {
       "code": "E1-17_R",
       "name": "クリアネスイエロートップス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "トップス",
@@ -196,6 +230,8 @@
     {
       "code": "E1-18_R",
       "name": "クリアネスイエロースカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "ボトムス",
@@ -207,6 +243,8 @@
     {
       "code": "E1-19_R",
       "name": "クリアネスイエローパンプス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "シューズ",
@@ -218,6 +256,8 @@
     {
       "code": "E1-20_R",
       "name": "クリアネスイエローアクセ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "アクセサリー",
@@ -229,6 +269,8 @@
     {
       "code": "E1-21_N",
       "name": "ピンクステージベスト",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "キュート",
       "category": "トップス",
@@ -240,6 +282,8 @@
     {
       "code": "E1-22_N",
       "name": "ピンクステージスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "キュート",
       "category": "ボトムス",
@@ -251,6 +295,8 @@
     {
       "code": "E1-23_N",
       "name": "ピンクステージシューズ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "キュート",
       "category": "シューズ",
@@ -262,6 +308,8 @@
     {
       "code": "E1-24_N",
       "name": "パフスリーブレモンカラーボレロ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "キュート",
       "category": "トップス",
@@ -273,6 +321,8 @@
     {
       "code": "E1-25_N",
       "name": "ラベンダーフリルスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "キュート",
       "category": "ボトムス",
@@ -284,6 +334,8 @@
     {
       "code": "E1-26_N",
       "name": "イエロー編み上げブーツ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "キュート",
       "category": "シューズ",
@@ -295,6 +347,8 @@
     {
       "code": "E1-27_N",
       "name": "ピンクブロッサムトップス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "キュート",
       "category": "トップス",
@@ -306,6 +360,8 @@
     {
       "code": "E1-28_N",
       "name": "ピンクブロッサムスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "キュート",
       "category": "ボトムス",
@@ -317,6 +373,8 @@
     {
       "code": "E1-29_N",
       "name": "ピンクブロッサムブーツ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "キュート",
       "category": "シューズ",
@@ -328,6 +386,8 @@
     {
       "code": "E1-30_ER",
       "name": "オデットスワン",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ドリーミークラウン",
       "type": "キュート",
       "category": "フルコーデ",
@@ -339,6 +399,8 @@
     {
       "code": "E1-31_ER",
       "name": "リルリボンストーリー",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "メープルリボン",
       "type": "キュート",
       "category": "フルコーデ",
@@ -350,6 +412,8 @@
     {
       "code": "E1-32_ER",
       "name": "オーロラペガサス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "キュート",
       "category": "フルコーデ",
@@ -361,6 +425,8 @@
     {
       "code": "E1-33_PR",
       "name": "天の川コズミックワンショルダー",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "フューチャリングガール",
       "type": "クール",
       "category": "トップス",
@@ -372,6 +438,8 @@
     {
       "code": "E1-34_PR",
       "name": "天の川コズミックスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "フューチャリングガール",
       "type": "クール",
       "category": "ボトムス",
@@ -383,6 +451,8 @@
     {
       "code": "E1-35_PR",
       "name": "天の川コズミックブーツ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "フューチャリングガール",
       "type": "クール",
       "category": "シューズ",
@@ -394,6 +464,8 @@
     {
       "code": "E1-36_PR",
       "name": "天の川コズミックカチューシャ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "フューチャリングガール",
       "type": "クール",
       "category": "アクセサリー",
@@ -405,6 +477,8 @@
     {
       "code": "E1-37_R",
       "name": "プリズムサイバーグラフィックワンピ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "フューチャリングガール",
       "type": "クール",
       "category": "トップス＆ボトムス",
@@ -416,6 +490,8 @@
     {
       "code": "E1-38_R",
       "name": "ブラックモダンボレロ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "フューチャリングガール",
       "type": "クール",
       "category": "トップス",
@@ -427,6 +503,8 @@
     {
       "code": "E1-39_R",
       "name": "ブラックフューチャーエナメルショートパンツ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "フューチャリングガール",
       "type": "クール",
       "category": "ボトムス",
@@ -438,6 +516,8 @@
     {
       "code": "E1-40_R",
       "name": "ブラックフューチャーブーツ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "フューチャリングガール",
       "type": "クール",
       "category": "シューズ",
@@ -449,6 +529,8 @@
     {
       "code": "E1-41_N",
       "name": "ブルーステージブラウス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "クール",
       "category": "トップス",
@@ -460,6 +542,8 @@
     {
       "code": "E1-42_N",
       "name": "ブルーステージスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "クール",
       "category": "ボトムス",
@@ -471,6 +555,8 @@
     {
       "code": "E1-43_N",
       "name": "ブルーステージブーツ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "クール",
       "category": "シューズ",
@@ -482,6 +568,8 @@
     {
       "code": "E1-44_N",
       "name": "ブラックストライプジャケット",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "クール",
       "category": "トップス",
@@ -493,6 +581,8 @@
     {
       "code": "E1-45_N",
       "name": "ダイヤモンドチェックスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "クール",
       "category": "ボトムス",
@@ -504,6 +594,8 @@
     {
       "code": "E1-46_N",
       "name": "ブルーストラップシューズ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "クール",
       "category": "シューズ",
@@ -515,6 +607,8 @@
     {
       "code": "E1-47_N",
       "name": "ネイビーブロッサムトップス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "クール",
       "category": "トップス",
@@ -526,6 +620,8 @@
     {
       "code": "E1-48_N",
       "name": "ネイビーブロッサムスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "クール",
       "category": "ボトムス",
@@ -537,6 +633,8 @@
     {
       "code": "E1-49_N",
       "name": "ネイビーブロッサムブーツ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "クール",
       "category": "シューズ",
@@ -548,6 +646,8 @@
     {
       "code": "E1-50_ER",
       "name": "ドリームエミネンス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "クール",
       "category": "フルコーデ",
@@ -559,6 +659,8 @@
     {
       "code": "E1-51_PR",
       "name": "レジェンダリールージュドレス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "セクシー",
       "category": "トップス＆ボトムス",
@@ -570,6 +672,8 @@
     {
       "code": "E1-52_PR",
       "name": "レジェンダリールージュパンプス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "セクシー",
       "category": "シューズ",
@@ -581,6 +685,8 @@
     {
       "code": "E1-53_R",
       "name": "アゲハレッドコクーンワンピ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "スパイシーアゲハ",
       "type": "セクシー",
       "category": "トップス＆ボトムス",
@@ -592,6 +698,8 @@
     {
       "code": "E1-54_R",
       "name": "アゲハレッドミュール",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "スパイシーアゲハ",
       "type": "セクシー",
       "category": "シューズ",
@@ -603,6 +711,8 @@
     {
       "code": "E1-55_R",
       "name": "パープルジュエリーワンピ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "スパイシーアゲハ",
       "type": "セクシー",
       "category": "トップス＆ボトムス",
@@ -614,6 +724,8 @@
     {
       "code": "E1-56_R",
       "name": "ゴールドチェーングラディエーター",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "スパイシーアゲハ",
       "type": "セクシー",
       "category": "シューズ",
@@ -625,6 +737,8 @@
     {
       "code": "E1-57_R",
       "name": "アゲハロゴフリルトップス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "スパイシーアゲハ",
       "type": "セクシー",
       "category": "トップス",
@@ -636,6 +750,8 @@
     {
       "code": "E1-58_R",
       "name": "アゲハファーつきスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "スパイシーアゲハ",
       "type": "セクシー",
       "category": "ボトムス",
@@ -647,6 +763,8 @@
     {
       "code": "E1-59_R",
       "name": "ブラックシフォンカチューシャ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "スパイシーアゲハ",
       "type": "セクシー",
       "category": "アクセサリー",
@@ -658,6 +776,8 @@
     {
       "code": "E1-60_N",
       "name": "パープルステージトップス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "セクシー",
       "category": "トップス",
@@ -669,6 +789,8 @@
     {
       "code": "E1-61_N",
       "name": "パープルステージスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "セクシー",
       "category": "ボトムス",
@@ -680,6 +802,8 @@
     {
       "code": "E1-62_N",
       "name": "パープルステージニーハイパンプス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "セクシー",
       "category": "シューズ",
@@ -691,6 +815,8 @@
     {
       "code": "E1-63_N",
       "name": "プッチがらシャイニングトップス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "セクシー",
       "category": "トップス",
@@ -702,6 +828,8 @@
     {
       "code": "E1-64_N",
       "name": "ブラックウォッシュデニムミニ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "セクシー",
       "category": "ボトムス",
@@ -713,6 +841,8 @@
     {
       "code": "E1-65_N",
       "name": "セクシーロゴチューブトップ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "セクシー",
       "category": "トップス",
@@ -724,6 +854,8 @@
     {
       "code": "E1-66_N",
       "name": "ベルトつきレザースカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "セクシー",
       "category": "ボトムス",
@@ -735,6 +867,8 @@
     {
       "code": "E1-67_N",
       "name": "サイハイレザーブーツ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "セクシー",
       "category": "シューズ",
@@ -746,6 +880,8 @@
     {
       "code": "E1-68_N",
       "name": "パープルブロッサムトップス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "セクシー",
       "category": "トップス",
@@ -757,6 +893,8 @@
     {
       "code": "E1-69_N",
       "name": "パープルブロッサムスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "セクシー",
       "category": "ボトムス",
@@ -768,6 +906,8 @@
     {
       "code": "E1-70_N",
       "name": "パープルブロッサムブーツ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "セクシー",
       "category": "シューズ",
@@ -779,6 +919,8 @@
     {
       "code": "E1-71_PR",
       "name": "サンシャインスターウェイトップス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "ポップ",
       "category": "トップス",
@@ -790,6 +932,8 @@
     {
       "code": "E1-72_PR",
       "name": "サンシャインスターウェイスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "ポップ",
       "category": "ボトムス",
@@ -801,6 +945,8 @@
     {
       "code": "E1-73_PR",
       "name": "サンシャインスターウェイシューズ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "ポップ",
       "category": "シューズ",
@@ -812,6 +958,8 @@
     {
       "code": "E1-74_PR",
       "name": "サンシャインスターウェイカチューシャ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "ポップ",
       "category": "アクセサリー",
@@ -823,6 +971,8 @@
     {
       "code": "E1-75_PR",
       "name": "サンライズスターウェイトップス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "ポップ",
       "category": "トップス",
@@ -834,6 +984,8 @@
     {
       "code": "E1-76_PR",
       "name": "サンライズスターウェイスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "ポップ",
       "category": "ボトムス",
@@ -845,6 +997,8 @@
     {
       "code": "E1-77_PR",
       "name": "サンライズスターウェイシューズ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "ポップ",
       "category": "シューズ",
@@ -856,6 +1010,8 @@
     {
       "code": "E1-78_PR",
       "name": "サンライズスターウェイカチューシャ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "ポップ",
       "category": "アクセサリー",
@@ -867,6 +1023,8 @@
     {
       "code": "E1-79_PR",
       "name": "サンセットスターウェイトップス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "ポップ",
       "category": "トップス",
@@ -878,6 +1036,8 @@
     {
       "code": "E1-80_PR",
       "name": "サンセットスターウェイスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "ポップ",
       "category": "ボトムス",
@@ -889,6 +1049,8 @@
     {
       "code": "E1-81_PR",
       "name": "サンセットスターウェイシューズ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "ポップ",
       "category": "シューズ",
@@ -900,6 +1062,8 @@
     {
       "code": "E1-82_PR",
       "name": "サンセットスターウェイカチューシャ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "ポップ",
       "category": "アクセサリー",
@@ -911,6 +1075,8 @@
     {
       "code": "E1-83_N",
       "name": "イエローブロッサムトップス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "ポップ",
       "category": "トップス",
@@ -922,6 +1088,8 @@
     {
       "code": "E1-84_N",
       "name": "イエローブロッサムスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "ポップ",
       "category": "ボトムス",
@@ -933,6 +1101,8 @@
     {
       "code": "E1-85_N",
       "name": "イエローブロッサムブーツ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ノーブランド",
       "type": "ポップ",
       "category": "シューズ",
@@ -944,6 +1114,8 @@
     {
       "code": "EP-031_R",
       "name": "ガーリーデビルトップス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "トップス",
@@ -955,6 +1127,8 @@
     {
       "code": "EP-032_R",
       "name": "ガーリーデビルスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "ボトムス",
@@ -966,6 +1140,8 @@
     {
       "code": "EP-033_R",
       "name": "ガーリーデビルパンプス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "エンジェリーシュガー",
       "type": "キュート",
       "category": "シューズ",
@@ -977,6 +1153,8 @@
     {
       "code": "EP-034_R",
       "name": "モンスターキャットトップス",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ドリーミークラウン",
       "type": "キュート",
       "category": "トップス",
@@ -988,6 +1166,8 @@
     {
       "code": "EP-035_R",
       "name": "モンスターキャットスカート",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ドリーミークラウン",
       "type": "キュート",
       "category": "ボトムス",
@@ -999,6 +1179,8 @@
     {
       "code": "EP-036_R",
       "name": "モンスターキャットファーブーツ",
+      "set": "第1弾",
+      "parallel": false,
       "brand": "ドリーミークラウン",
       "type": "キュート",
       "category": "シューズ",
