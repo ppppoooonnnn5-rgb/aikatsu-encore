@@ -1,12 +1,11 @@
 {
-  "updatedAt": "2026-10-22T00:14:38.569276+00:00",
+  "updatedAt": "2026-10-22T06:22:56.737309+00:00",
   "sources": [
     "https://dcd.aikatsu.com/encore/",
     "https://dcd.aikatsu.com/encore/cardlist/",
     "https://dcd.aikatsu.com/encore/cardlist/?display=1&search=true&series=629001&sort=1",
     "https://dcd.aikatsu.com/encore/cardlist/?display=2&search=true&series=629001&sort=1",
-    "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
-    "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-031_R%20EP-032_R%20EP-033_R%20EP-034_R%20EP-035_R%20EP-036_R"
+    "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1"
   ],
   "cards": [
     {
@@ -1269,84 +1268,6 @@
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/E1-85_N.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/",
       "metadataSource": "index.html"
-    },
-    {
-      "code": "EP-031_R",
-      "name": "ガーリーデビルトップス",
-      "set": "第1弾",
-      "parallel": false,
-      "brand": "エンジェリーシュガー",
-      "type": "キュート",
-      "category": "トップス",
-      "rarity": "レア",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-031_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "manual"
-    },
-    {
-      "code": "EP-032_R",
-      "name": "ガーリーデビルスカート",
-      "set": "第1弾",
-      "parallel": false,
-      "brand": "エンジェリーシュガー",
-      "type": "キュート",
-      "category": "ボトムス",
-      "rarity": "レア",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-032_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "manual"
-    },
-    {
-      "code": "EP-033_R",
-      "name": "ガーリーデビルパンプス",
-      "set": "第1弾",
-      "parallel": false,
-      "brand": "エンジェリーシュガー",
-      "type": "キュート",
-      "category": "シューズ",
-      "rarity": "レア",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-033_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "manual"
-    },
-    {
-      "code": "EP-034_R",
-      "name": "モンスターキャットトップス",
-      "set": "第1弾",
-      "parallel": false,
-      "brand": "ドリーミークラウン",
-      "type": "キュート",
-      "category": "トップス",
-      "rarity": "レア",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-034_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "manual"
-    },
-    {
-      "code": "EP-035_R",
-      "name": "モンスターキャットスカート",
-      "set": "第1弾",
-      "parallel": false,
-      "brand": "ドリーミークラウン",
-      "type": "キュート",
-      "category": "ボトムス",
-      "rarity": "レア",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-035_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "manual"
-    },
-    {
-      "code": "EP-036_R",
-      "name": "モンスターキャットファーブーツ",
-      "set": "第1弾",
-      "parallel": false,
-      "brand": "ドリーミークラウン",
-      "type": "キュート",
-      "category": "シューズ",
-      "rarity": "レア",
-      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-036_R.webp",
-      "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "manual"
     }
   ]
 }
