@@ -897,7 +897,7 @@ async function syncOfficialCards(){
         (typeof c.image==="string" && c.image.split("?")[0].endsWith(officialImageSuffix))
       );
       if(existingIndex>=0){
-        if(item.metadataSource==="manual"||item.metadataSource==="index.html"){
+        if(item.metadataSource==="manual"||item.metadataSource==="manual-name"||item.metadataSource==="index.html"){
           const existing=cards[existingIndex];
           const meta=OFFICIAL_CARD_META[code]||PROMO_CARD_META[code];
           const updated={
