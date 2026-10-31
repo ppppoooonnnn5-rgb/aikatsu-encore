@@ -1272,7 +1272,7 @@
     },
     {
       "code": "EP-019_N",
-      "name": "EP-019_N",
+      "name": "エンジェリーベアフリルトップス",
       "set": "第1弾",
       "parallel": false,
       "brand": "未設定",
@@ -1281,11 +1281,11 @@
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-019_N.webp",
       "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "OCR"
+      "metadataSource": "manual-name"
     },
     {
       "code": "EP-020_N",
-      "name": "が          “   \\ Pi   アス   GF Ww ye",
+      "name": "エンジェリーベアパステルスカート",
       "set": "第1弾",
       "parallel": false,
       "brand": "未設定",
@@ -1294,11 +1294,11 @@
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-020_N.webp",
       "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "OCR"
+      "metadataSource": "manual-name"
     },
     {
       "code": "EP-021_N",
-      "name": "エンシェリーベスニョカ",
+      "name": "エンジェリーベアスニーカー",
       "set": "第1弾",
       "parallel": false,
       "brand": "未設定",
@@ -1307,11 +1307,11 @@
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-021_N.webp",
       "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "OCR"
+      "metadataSource": "manual-name"
     },
     {
       "code": "EP-022_N",
-      "name": "の人⑳) ュー              NN /  こつ     4",
+      "name": "エンジェリーベアリボン",
       "set": "第1弾",
       "parallel": false,
       "brand": "未設定",
@@ -1320,7 +1320,7 @@
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-022_N.webp",
       "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "OCR"
+      "metadataSource": "manual-name"
     }
   ]
 }
