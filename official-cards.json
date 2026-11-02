@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T00:30:24.599561+00:00",
+  "updatedAt": "2026-11-02T06:55:30.077411+00:00",
   "sources": [
     "https://dcd.aikatsu.com/encore/",
     "https://dcd.aikatsu.com/encore/cardlist/",
@@ -7,7 +7,8 @@
     "https://dcd.aikatsu.com/encore/cardlist/?display=2&search=true&series=629001&sort=1",
     "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
     "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-    "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-022_N%20EP-019_N%20EP-020_N%20EP-021_N"
+    "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-022_N%20EP-019_N%20EP-020_N%20EP-021_N",
+    "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-042_PR"
   ],
   "cards": [
     {
@@ -1686,6 +1687,19 @@
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-038_N.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
       "metadataSource": "index.html"
+    },
+    {
+      "code": "EP-042_PR",
+      "name": "ーー ンージー人 |",
+      "set": "第1弾",
+      "parallel": false,
+      "brand": "未設定",
+      "type": "なし",
+      "category": "未設定",
+      "rarity": "プレミアムレア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-042_PR.webp",
+      "source": "https://dcd.aikatsu.com/encore/",
+      "metadataSource": "OCR"
     }
   ]
 }
