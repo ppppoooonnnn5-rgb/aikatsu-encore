@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T00:59:44.330887+00:00",
+  "updatedAt": "2026-11-10T13:59:31.779405+00:00",
   "sources": [
     "https://dcd.aikatsu.com/encore/",
     "https://dcd.aikatsu.com/encore/cardlist/",
@@ -7,7 +7,6 @@
     "https://dcd.aikatsu.com/encore/cardlist/?display=2&search=true&series=629001&sort=1",
     "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
     "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-    "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-022_N%20EP-019_N%20EP-020_N%20EP-021_N",
     "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-042_PR"
   ],
   "cards": [
@@ -1516,7 +1515,7 @@
       "category": "未設定",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-019_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
       "metadataSource": "manual-name"
     },
     {
@@ -1529,7 +1528,7 @@
       "category": "未設定",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-020_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
       "metadataSource": "manual-name"
     },
     {
@@ -1542,7 +1541,7 @@
       "category": "未設定",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-021_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
       "metadataSource": "manual-name"
     },
     {
@@ -1555,7 +1554,7 @@
       "category": "未設定",
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-022_N.webp",
-      "source": "https://dcd.aikatsu.com/encore/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
       "metadataSource": "manual-name"
     },
     {
