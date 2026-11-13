@@ -1,13 +1,12 @@
 {
-  "updatedAt": "2026-11-12T23:00:01.144083+00:00",
+  "updatedAt": "2026-11-13T04:16:19.345458+00:00",
   "sources": [
     "https://dcd.aikatsu.com/encore/",
     "https://dcd.aikatsu.com/encore/cardlist/",
     "https://dcd.aikatsu.com/encore/cardlist/?display=1&search=true&series=629001&sort=1",
     "https://dcd.aikatsu.com/encore/cardlist/?display=2&search=true&series=629001&sort=1",
     "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
-    "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-    "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-042_PR"
+    "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
   ],
   "cards": [
     {
@@ -1697,7 +1696,7 @@
       "category": "未設定",
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-042_PR.webp",
-      "source": "https://dcd.aikatsu.com/encore/",
+      "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
       "metadataSource": "OCR"
     }
   ]
