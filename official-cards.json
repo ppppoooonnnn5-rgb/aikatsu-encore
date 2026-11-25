@@ -1,12 +1,13 @@
 {
-  "updatedAt": "2026-11-25T01:46:08.628665+00:00",
+  "updatedAt": "2026-11-25T16:31:12.430094+00:00",
   "sources": [
     "https://dcd.aikatsu.com/encore/",
     "https://dcd.aikatsu.com/encore/cardlist/",
     "https://dcd.aikatsu.com/encore/cardlist/?display=1&search=true&series=629001&sort=1",
     "https://dcd.aikatsu.com/encore/cardlist/?display=2&search=true&series=629001&sort=1",
     "https://dcd.aikatsu.com/encore/cardlist/?display=3&search=true&series=629001&sort=1",
-    "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901"
+    "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
+    "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901&free=EP-023_N%20EP-024_N%20EP-025_N%20EP-026_N%20EP-027_N%20EP-028_N%20EP-039_R%20EP-040_R"
   ],
   "cards": [
     {
@@ -1557,6 +1558,84 @@
       "metadataSource": "manual-name"
     },
     {
+      "code": "EP-023_N",
+      "name": "EP-023_N",
+      "set": "第1弾",
+      "parallel": false,
+      "brand": "未設定",
+      "type": "なし",
+      "category": "未設定",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-023_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/",
+      "metadataSource": "OCR"
+    },
+    {
+      "code": "EP-024_N",
+      "name": "花柄ショニートバシン < 1 260",
+      "set": "第1弾",
+      "parallel": false,
+      "brand": "未設定",
+      "type": "なし",
+      "category": "未設定",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-024_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/",
+      "metadataSource": "OCR"
+    },
+    {
+      "code": "EP-025_N",
+      "name": "EP-025_N",
+      "set": "第1弾",
+      "parallel": false,
+      "brand": "未設定",
+      "type": "なし",
+      "category": "未設定",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-025_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/",
+      "metadataSource": "OCR"
+    },
+    {
+      "code": "EP-026_N",
+      "name": "EP-026_N",
+      "set": "第1弾",
+      "parallel": false,
+      "brand": "未設定",
+      "type": "なし",
+      "category": "未設定",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-026_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/",
+      "metadataSource": "OCR"
+    },
+    {
+      "code": "EP-027_N",
+      "name": "EP-027_N",
+      "set": "第1弾",
+      "parallel": false,
+      "brand": "未設定",
+      "type": "なし",
+      "category": "未設定",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-027_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/",
+      "metadataSource": "OCR"
+    },
+    {
+      "code": "EP-028_N",
+      "name": "EP-028_N",
+      "set": "第1弾",
+      "parallel": false,
+      "brand": "未設定",
+      "type": "なし",
+      "category": "未設定",
+      "rarity": "ノーマル",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-028_N.webp",
+      "source": "https://dcd.aikatsu.com/encore/",
+      "metadataSource": "OCR"
+    },
+    {
       "code": "EP-029_R",
       "name": "スターライト学園制服",
       "set": "第1弾",
@@ -1685,6 +1764,32 @@
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-038_N.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
       "metadataSource": "index.html"
+    },
+    {
+      "code": "EP-039_R",
+      "name": "の のるののこの0 っ の<",
+      "set": "第1弾",
+      "parallel": false,
+      "brand": "未設定",
+      "type": "なし",
+      "category": "未設定",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-039_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/",
+      "metadataSource": "OCR"
+    },
+    {
+      "code": "EP-040_R",
+      "name": "中97作55メ5 \\N     ペ  VV",
+      "set": "第1弾",
+      "parallel": false,
+      "brand": "未設定",
+      "type": "なし",
+      "category": "未設定",
+      "rarity": "レア",
+      "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-040_R.webp",
+      "source": "https://dcd.aikatsu.com/encore/",
+      "metadataSource": "OCR"
     },
     {
       "code": "EP-042_PR",
