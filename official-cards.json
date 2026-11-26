@@ -1559,7 +1559,7 @@
     },
     {
       "code": "EP-023_N",
-      "name": "EP-023_N",
+      "name": "ミントシフォントップス",
       "set": "第1弾",
       "parallel": false,
       "brand": "未設定",
@@ -1568,11 +1568,11 @@
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-023_N.webp",
       "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "OCR"
+      "metadataSource": "manual-name"
     },
     {
       "code": "EP-024_N",
-      "name": "花柄ショニートバシン < 1 260",
+      "name": "花柄ショートパンツ",
       "set": "第1弾",
       "parallel": false,
       "brand": "未設定",
@@ -1581,11 +1581,11 @@
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-024_N.webp",
       "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "OCR"
+      "metadataSource": "manual-name"
     },
     {
       "code": "EP-025_N",
-      "name": "EP-025_N",
+      "name": "折り返しピンクショートブーツ",
       "set": "第1弾",
       "parallel": false,
       "brand": "未設定",
@@ -1594,11 +1594,11 @@
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-025_N.webp",
       "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "OCR"
+      "metadataSource": "manual-name"
     },
     {
       "code": "EP-026_N",
-      "name": "EP-026_N",
+      "name": "レインボープリントシャツ",
       "set": "第1弾",
       "parallel": false,
       "brand": "未設定",
@@ -1607,11 +1607,11 @@
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-026_N.webp",
       "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "OCR"
+      "metadataSource": "manual-name"
     },
     {
       "code": "EP-027_N",
-      "name": "EP-027_N",
+      "name": "ブラックスキニーパンツ",
       "set": "第1弾",
       "parallel": false,
       "brand": "未設定",
@@ -1620,11 +1620,11 @@
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-027_N.webp",
       "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "OCR"
+      "metadataSource": "manual-name"
     },
     {
       "code": "EP-028_N",
-      "name": "EP-028_N",
+      "name": "ブルーニーハイブーツ",
       "set": "第1弾",
       "parallel": false,
       "brand": "未設定",
@@ -1633,7 +1633,7 @@
       "rarity": "ノーマル",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-028_N.webp",
       "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "OCR"
+      "metadataSource": "manual-name"
     },
     {
       "code": "EP-029_R",
@@ -1767,7 +1767,7 @@
     },
     {
       "code": "EP-039_R",
-      "name": "の のるののこの0 っ の<",
+      "name": "ホワイトサンタパーカー＆スカート",
       "set": "第1弾",
       "parallel": false,
       "brand": "未設定",
@@ -1776,11 +1776,11 @@
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-039_R.webp",
       "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "OCR"
+      "metadataSource": "manual-name"
     },
     {
       "code": "EP-040_R",
-      "name": "中97作55メ5 \\N     ペ  VV",
+      "name": "ホワイトサンタショートブーツ",
       "set": "第1弾",
       "parallel": false,
       "brand": "未設定",
@@ -1789,11 +1789,11 @@
       "rarity": "レア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-040_R.webp",
       "source": "https://dcd.aikatsu.com/encore/",
-      "metadataSource": "OCR"
+      "metadataSource": "manual-name"
     },
     {
       "code": "EP-042_PR",
-      "name": "ーー ンージー人 |",
+      "name": "たまごっちパラダイスカチューシャ",
       "set": "第1弾",
       "parallel": false,
       "brand": "未設定",
@@ -1802,7 +1802,7 @@
       "rarity": "プレミアムレア",
       "image": "https://dcd.aikatsu.com/encore/images/cardlist/card/EP-042_PR.webp",
       "source": "https://dcd.aikatsu.com/encore/cardlist/?search=true&series=629901",
-      "metadataSource": "OCR"
+      "metadataSource": "manual-name"
     }
   ]
 }
